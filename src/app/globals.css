@@ -24,3 +24,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes ball-expand {
+  0% {
+    scale: 0.5;
+    opacity: 0.7;
+  }
+
+  50% {
+    scale: 1.5;
+    opacity: 0.5;
+  }
+
+  100% {
+    scale: 2;
+    opacity: 0.3;
+  }
+}
+
+.animate-ball-expand {
+  animation: ball-expand 5s ease-out forwards;
+}
