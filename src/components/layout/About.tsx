@@ -6,10 +6,10 @@ export default function About() {
       <div className="w-full p-10 flex flex-col items-center justify-center">
         <div>
           <h1 className={`text-7xl ${lobster.className}`}>
-            Hello👋,
+            Hello<span className="inline-block animate-wiggle">👋</span>,
           </h1>
           <div className="mt-5 flex items-center text-7xl font-semibold">
-            I'm&nbsp;<span className="text-blue-700">Eswar</span>.
+            I'm&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
           </div>
         </div>
       </div>
