@@ -25,6 +25,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Ball expand animation */
 @keyframes ball-expand {
   0% {
     scale: 0.5;
@@ -46,6 +47,7 @@ body {
   animation: ball-expand 3s ease-out forwards;
 }
 
+/* Slide down animation */
 @keyframes slide-down {
   0% {
     opacity: 0;
@@ -61,3 +63,54 @@ body {
   animation: slide-down 0.3s ease-out;
 }
 
+/* Shiny text animation */
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text {
+  color: #1a85ffa4;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  animation: shine 3s linear infinite;
+}
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(8deg);
+  }
+  45% {
+    transform: rotate(-8deg);
+  }
+  60% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-wiggle {
+  animation: wiggle 3s ease-out infinite;
+}
