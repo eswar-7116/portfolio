@@ -1,23 +1,42 @@
-import lobster from "@/fonts/lobster";
-
 export default function About() {
   return (
     <>
-      <div className="w-full p-10 flex flex-col items-center justify-center">
-        <div>
-          <h1 className={`text-7xl ${lobster.className}`}>
-            Hello<span className="inline-block animate-wiggle">👋</span>,
-          </h1>
-          <div className="mt-5 flex items-center text-7xl font-semibold">
-            I'm&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
-          </div>
-        </div>
-      </div>
-      
-      <div className="text-xl max-w-3xl mx-auto text-center leading-relaxed">
+      <div className="text-xl max-w-3xl mx-auto text-center leading-relaxed space-y-6 mt-16 scroll-mt-30" id="about">
+        <h1 className="text-4xl font-bold text-blue-500">About me</h1>
         <p>
-          I am <b>Eswar Dudi</b>, a curious and enthusiastic software developer passionate about 
-          <b> AI, web development, systems and backend engineering</b>.  
+          I'm <b>Eswar Dudi</b>, a software developer passionate about{" "}
+          <b> backend systems, AI, and web development</b>. I enjoy building
+          awesome projects and learning deep about tech.
+        </p>
+        <p>
+          Some of my projects include <b>NexusChat</b> (a peer-to-peer chat app
+          with JWT auth and real-time communication), <b> Guntainer</b> (a
+          container runtime in Go that isolates processes), and <b>CalGist</b>{" "}
+          (an AI-powered calendar summarizer). You can find more in the&nbsp;
+          <a href="#projects" className="cursor-pointer underline">
+            Projects
+          </a>
+          &nbsp;section.
+        </p>
+        <p>
+          What drives me is curiosity, the urge to understand systems deeply and
+          use that knowledge to create software that is{" "}
+          <b> efficient, reliable, and impactful</b>.
+        </p>
+        <p>
+          I work across multiple languages including Python, Java, JavaScript,
+          TypeScript, C, Go, and Kotlin. I've also built with frameworks and
+          stacks like MERN, FastAPI, Flask, Jetpack Compose, and occasionally
+          Spring Boot. Beyond tech, I enjoy movies, caring for my plants, and
+          long walks with friends.
+        </p>
+        <p>
+          Currently, I'm pursuing my B.Tech in Computer Science at{" "}
+          <b>CVR College of Engineering</b>. Looking ahead, I aim to grow as a{" "}
+          <b>Software Development Engineer</b>, contributing to projects where
+          performance, scalability, and problem-solving are at the core. I'm
+          excited to take on opportunities where I can push boundaries in
+          domains I love.
         </p>
       </div>
     </>

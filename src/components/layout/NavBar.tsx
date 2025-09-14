@@ -5,9 +5,10 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
+  { label: "About", href: "#about" },
+  { label: "Contact", href: "#contact" },
   { label: "Projects", href: "#projects" },
   { label: "Resume", href: "/Eswar_Dudi.pdf", target: "_blank" },
-  { label: "Contacts", href: "#contact" },
   { label: "AMA Bot", href: "#ama-bot" },
 ];
 
@@ -16,7 +17,7 @@ export default function NavBar() {
 
   return (
     <div className="sticky top-0 z-10 p-0.5">
-      <nav className="rounded-full p-4 px-6 m-4 bg-transparent/30 backdrop-blur-md border border-white/20 shadow-sm shadow-blue-400 flex justify-between items-center">
+      <nav className="rounded-full p-4 px-6 m-4 bg-transparent/30 backdrop-blur-md border border-white/20 shadow-sm shadow-blue-400 flex justify-between items-center-safe">
         {/* Name */}
         <span className="md:text-xl text-md font-semibold">Eswar Dudi</span>
 
@@ -31,7 +32,7 @@ export default function NavBar() {
 
         {/* Mobile Menu */}
         <button
-          className="md:hidden flex items-center"
+          className="md:hidden flex items-center-safe"
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -40,7 +41,7 @@ export default function NavBar() {
 
       {/* Mobile Dropdown */}
       {open && (
-        <div className="md:hidden flex flex-col items-center gap-4 pb-4 animate-slide-down text-md">
+        <div className="md:hidden flex flex-col items-center-safe gap-4 pb-4 animate-slide-down text-md">
           {navLinks.map(({ label, href, target }) => (
             <a
               key={label}
