@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {/* Blue ball */}
-        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 rounded-full bg-blend-color bg-blue-900 blur-[200px] opacity-40 animate-ball-expand pointer-events-none" />
+        <div className="fixed top-0 left-1/2 -translate-x-1/2 w-1/2 h-1/2 rounded-full bg-blue-900 blur-[200px] opacity-40 animate-ball-expand pointer-events-none" />
 
         {/* Navbar */}
         <NavBar />
