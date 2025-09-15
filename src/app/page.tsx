@@ -13,7 +13,7 @@ export default function Home() {
             Hello<span className="inline-block animate-wiggle">👋</span>,
           </h1>
           <div className="mt-5 flex items-center-safe text-7xl font-semibold">
-            I'm&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
+            I&apos;m&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
           </div>
         </div>
       </header>
