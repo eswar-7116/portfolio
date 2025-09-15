@@ -44,7 +44,7 @@ body {
 }
 
 .animate-ball-expand {
-  animation: ball-expand 3s ease-out forwards;
+  animation: ball-expand 6s ease-out forwards;
 }
 
 /* Slide down animation */
