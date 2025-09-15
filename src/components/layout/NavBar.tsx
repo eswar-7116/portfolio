@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
@@ -25,9 +26,9 @@ export default function NavBar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 md:text-md text-sm">
           {navLinks.map(({ label, href, target }) => (
-            <a key={label} href={href} target={target ?? "_self"}>
+            <Link key={label} href={href} target={target ?? "_self"}>
               {label}
-            </a>
+            </Link>
           ))}
         </div>
 
@@ -44,14 +45,14 @@ export default function NavBar() {
       {open && (
         <div className="md:hidden flex flex-col items-center-safe gap-4 pb-4 animate-slide-down text-md">
           {navLinks.map(({ label, href, target }) => (
-            <a
+            <Link
               key={label}
               href={href}
               target={target ?? "_self"}
               onClick={() => setOpen(false)}
             >
               {label}
-            </a>
+            </Link>
           ))}
         </div>
       )}

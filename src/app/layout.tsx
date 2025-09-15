@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Eswar Dudi",
+  title: "Eswar Dudi | Developer Portfolio",
   description: "The developer portfolio of Eswar Dudi",
 };
 
