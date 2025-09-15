@@ -1,5 +1,6 @@
 import About from "@/components/layout/About";
 import Contact from "@/components/layout/Contact";
+import Projects from "@/components/layout/Projects";
 import lobster from "@/fonts/lobster";
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
 
       {/* About */}
       <About />
+
+      {/* Projects */}
+      <Projects />
     </main>
   );
 }
