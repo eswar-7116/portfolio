@@ -13,9 +13,32 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const title = "Eswar Dudi | Developer Portfolio"
+const description = "Portfolio of Eswar Dudi, a computer science student and software engineer. Skilled in full-stack and Android development using Java, Python, JavaScript, Go, Kotlin and TypeScript."
+const myName = "Eswar Dudi"
+const images = ["https://eswardudi.vercel.app/ss.png"]
+
 export const metadata: Metadata = {
-  title: "Eswar Dudi | Developer Portfolio",
-  description: "The developer portfolio of Eswar Dudi",
+  title,
+  description,
+  keywords: [myName, "Eswar Dudi Portfolio", "Eswar Dudi Developer", "Eswar Dudi Software Engineer", "Eswar Dudi Student", "Eswar Dudi Projects", "Portfolio", "Developer Portfolio", "Student Portfolio"],
+  authors: { name: myName },
+  creator: myName,
+  icons: "https://eswardudi.vercel.app/favicon.ico",
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    url: "https://eswardudi.vercel.app",
+    siteName: title,
+    images,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title, description,
+    creator: "@EswarDudi",
+    images,
+  }
 };
 
 export default function RootLayout({
