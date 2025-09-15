@@ -14,7 +14,6 @@ export default function NavBar() {
     { label: "About", href: pathname === "/" ? "#about" : "/#about" },
     { label: "Contact", href: pathname === "/" ? "#contact" : "/#contact" },
     { label: "Projects", href: "/projects" },
-    { label: "Resume", href: "/Eswar_Dudi.pdf", target: "_blank" },
     { label: "AMA Bot", href: pathname === "/" ? "#ama" : "/#ama" },
   ];
 
@@ -25,11 +24,12 @@ export default function NavBar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-6 md:text-md text-sm">
-          {navLinks.map(({ label, href, target }) => (
-            <Link key={label} href={href} target={target ?? "_self"}>
+          {navLinks.map(({ label, href }) => (
+            <Link key={label} href={href}>
               {label}
             </Link>
           ))}
+          <a href="/Eswar_Dudi.pdf" rel="noopener noreferrer" target="_blank">Resume</a>
         </div>
 
         {/* Mobile Menu */}
@@ -44,16 +44,16 @@ export default function NavBar() {
       {/* Mobile Dropdown */}
       {open && (
         <div className="md:hidden flex flex-col items-center-safe gap-4 pb-4 animate-slide-down text-md">
-          {navLinks.map(({ label, href, target }) => (
+          {navLinks.map(({ label, href }) => (
             <Link
               key={label}
               href={href}
-              target={target ?? "_self"}
               onClick={() => setOpen(false)}
             >
               {label}
             </Link>
           ))}
+          <a href="/Eswar_Dudi.pdf" rel="noopener noreferrer" target="_blank" onClick={() => setOpen(false)}>Resume</a>
         </div>
       )}
     </div>
