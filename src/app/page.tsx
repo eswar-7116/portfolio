@@ -6,13 +6,20 @@ import lobster from "@/fonts/lobster";
 
 export default function Home() {
   return (
-    <main className="w-full h-full px-20" role="main">
-      <header className="w-full p-10 flex flex-col items-center-safe justify-center-safe" role="banner" aria-labelledby="home-heading">
+    <main className="w-full h-full px-4 sm:px-20" role="main">
+      <header
+        className="w-full p-6 sm:p-10 flex flex-col items-center-safe justify-center-safe"
+        role="banner"
+        aria-labelledby="home-heading"
+      >
         <div>
-          <h1 className={`text-7xl ${lobster.className}`} id="home-heading">
+          <h1
+            className={`text-5xl sm:text-7xl ${lobster.className}`}
+            id="home-heading"
+          >
             Hello<span className="inline-block animate-wiggle">👋</span>,
           </h1>
-          <div className="mt-5 flex items-center-safe text-7xl font-semibold">
+          <div className="mt-4 sm:mt-5 flex items-center-safe text-4xl sm:text-7xl font-semibold">
             I&apos;m&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
           </div>
         </div>
@@ -22,17 +29,17 @@ export default function Home() {
       <section id="contact" className="scroll-mt-30" aria-label="Contact Me">
         <Contact />
       </section>
-      
+
       {/* About */}
       <section id="about" className="scroll-mt-30" aria-labelledby="about-heading">
         <About />
       </section>
-      
+
       {/* Projects */}
       <section id="projects" aria-labelledby="projects-heading">
         <Projects />
       </section>
-      
+
       {/* AMA */}
       <section id="ama" className="scroll-mt-30" aria-labelledby="ama-heading">
         <AMA />
