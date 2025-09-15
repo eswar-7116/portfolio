@@ -13,7 +13,7 @@ export default function About() {
           with JWT auth and real-time communication), <b> Guntainer</b> (a
           container runtime in Go that isolates processes), and <b>CalGist</b>{" "}
           (an AI-powered calendar summarizer). You can find more in the&nbsp;
-          <a href="#projects" className="cursor-pointer underline">
+          <a href="/projects" className="cursor-pointer underline">
             Projects
           </a>
           &nbsp;section.
