@@ -1,8 +1,10 @@
+import Link from "next/link";
+
 export default function About() {
   return (
     <>
-      <div className="text-xl max-w-3xl mx-auto text-center leading-relaxed space-y-6 mt-16 scroll-mt-30" id="about">
-        <h1 className="text-4xl font-bold text-blue-500">About me</h1>
+      <div className="text-xl max-w-3xl mx-auto text-center leading-relaxed space-y-6 mt-16">
+        <h1 className="text-4xl font-bold text-blue-500" id="about-heading">About me</h1>
         <p>
           I'm <b>Eswar Dudi</b>, a software developer passionate about{" "}
           <b> backend systems, AI, and web development</b>. I enjoy building
@@ -13,9 +15,9 @@ export default function About() {
           with JWT auth and real-time communication), <b> Guntainer</b> (a
           container runtime in Go that isolates processes), and <b>CalGist</b>{" "}
           (an AI-powered calendar summarizer). You can find more in the&nbsp;
-          <a href="/projects" className="cursor-pointer underline">
+          <Link href="/projects" className="cursor-pointer underline">
             Projects
-          </a>
+          </Link>
           &nbsp;section.
         </p>
         <p>
