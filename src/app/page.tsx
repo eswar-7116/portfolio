@@ -1,4 +1,5 @@
 import About from "@/components/layout/About";
+import AMA from "@/components/layout/AMA";
 import Contact from "@/components/layout/Contact";
 import Projects from "@/components/layout/Projects";
 import lobster from "@/fonts/lobster";
@@ -30,6 +31,11 @@ export default function Home() {
       {/* Projects */}
       <section id="projects" aria-labelledby="projects-heading">
         <Projects />
+      </section>
+      
+      {/* AMA */}
+      <section id="ama" className="scroll-mt-30" aria-labelledby="ama-heading">
+        <AMA />
       </section>
     </main>
   );
