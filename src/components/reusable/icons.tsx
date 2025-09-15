@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 export const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -11,7 +11,9 @@ export const LinkedInIcon = (props: React.SVGProps<SVGSVGElement>) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={`lucide lucideLinkedin-icon lucideLinkedin ${props.className ?? ''}`}
+    className={`lucide lucideLinkedin-icon lucideLinkedin ${
+      props.className ?? ""
+    }`}
     {...props}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -31,7 +33,9 @@ export const GitHubIcon = (props: React.SVGProps<SVGSVGElement>) => (
     strokeWidth="2"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={`lucide lucide-github-icon lucide-github ${props.className ?? ''}`}
+    className={`lucide lucide-github-icon lucide-github ${
+      props.className ?? ""
+    }`}
     {...props}
   >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -46,7 +50,7 @@ export const TwitterXIcon = (props: React.SVGProps<SVGSVGElement>) => (
     height="16"
     fill="currentColor"
     viewBox="0 0 16 16"
-    className={`bi bi-twitter-x ${props.className ?? ''}`}
+    className={`bi bi-twitter-x ${props.className ?? ""}`}
     {...props}
   >
     <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
