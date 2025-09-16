@@ -41,7 +41,7 @@ export default function Home() {
       </section>
 
       {/* AMA */}
-      <section id="ama" className="scroll-mt-30" aria-labelledby="ama-heading">
+      <section id="ama" className="scroll-mt-30" aria-label="Ask Anything about Eswar Dudi">
         <AMA />
       </section>
     </main>
