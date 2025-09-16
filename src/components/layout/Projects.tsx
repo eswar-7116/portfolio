@@ -10,7 +10,7 @@ export default function Projects() {
           className="text-3xl sm:text-4xl font-bold w-full text-center text-blue-500"
           id="projects-heading"
         >
-          Some of my projects
+          Some of my top projects
         </h1>
       </div>
       <div className="flex flex-col items-center-safe justify-center-safe p-4 sm:p-8 gap-4 sm:gap-6">

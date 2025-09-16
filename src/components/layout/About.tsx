@@ -13,7 +13,7 @@ export default function About() {
           awesome projects and learning deep about tech.
         </p>
         <p>
-          Some of my projects include <b>NexusChat</b> (a peer-to-peer chat app
+          Some of my top projects include <b>NexusChat</b> (a peer-to-peer chat app
           with JWT auth and real-time communication), <b> Guntainer</b> (a
           container runtime in Go that isolates processes), and <b>CalGist</b>{" "}
           (an AI-powered calendar summarizer). You can find more in the&nbsp;
