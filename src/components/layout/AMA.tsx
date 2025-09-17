@@ -51,6 +51,7 @@ export default function AMA() {
         Ask Me Anything!
       </h1>
 
+      {/* Input field and submit button */}
       <form
         onSubmit={handleQuerySubmit}
         className="w-full flex gap-2 items-center justify-center mt-8"
@@ -60,7 +61,7 @@ export default function AMA() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Ask about me or my projects..."
-          className="w-3/7 h-12 text-lg mr-4 p-2 rounded-lg text-black bg-white shadow-lg shadow-black"
+          className="w-full md:w-3/7 h-12 text-lg mr-4 p-2 rounded-lg text-black bg-white shadow-lg shadow-black"
           aria-label="Ask a question about me or my projects"
         />
         <button
@@ -71,7 +72,8 @@ export default function AMA() {
         </button>
       </form>
 
-      <div className="w-3/4 mt-8 min-h-50 overflow-y-auto p-4 rounded-lg text-left bg-blue-950/60 text-white text-xl prose">
+      {/* Output */}
+      <div className="w-full md:w-3/4 mt-8 min-h-50 overflow-y-auto p-4 rounded-lg text-left bg-blue-950/60 text-white text-xl prose">
         {answer ? (
           <ReactMarkdown
             components={{
