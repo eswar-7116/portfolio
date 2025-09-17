@@ -89,14 +89,15 @@ export default function AMA() {
           >
             {answer}
           </ReactMarkdown>
+        ) : loading ? (
+          <p className="animate-pulse">Thinking...</p>
         ) : (
-          !loading && (
-            <div className="text-gray-500 mt-2">
-              Example: <br />
-              &quot;Tell me about your top projects&quot; <br />
-              &quot;What is NexusChat?&quot; <br />&quot;Explain Guntainer in simple terms&quot;
-            </div>
-          )
+          <div className="text-gray-500 mt-2">
+            Example: <br />
+            &quot;Tell me about your top projects&quot; <br />
+            &quot;What is NexusChat?&quot; <br />
+            &quot;Explain Guntainer in simple terms&quot;
+          </div>
         )}
       </div>
     </div>
