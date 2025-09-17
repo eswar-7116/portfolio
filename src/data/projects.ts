@@ -69,6 +69,13 @@ const projects: Project[] = [
     link: "https://nexuschat-aglp.onrender.com/",
   },
   {
+    title: "This Portfolio Website",
+    skills: ["TypeScript", "Next.js", "Tailwind CSS", "Gemini API", "SEO Optimization", "React"],
+    description: "A showcase of my skills and projects across full-stack, AI, systems programming and Android development.",
+    github: "https://github.com/eswar-7116/portfolio",
+    link: "https://eswardudi.vercel.app"
+  },
+  {
     title: "HTTP Server from scratch in C",
     skills: ["C", "Unix Socket API", "HTTP Protocol"],
     description: "A minimal HTTP web server built from scratch in C using raw TCP sockets, without any frameworks or libraries. Built to deeply understand how web servers work at the lowest level.",
