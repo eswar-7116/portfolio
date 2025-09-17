@@ -45,7 +45,7 @@ export default function ProjectDetails({ project, className, ...props }: Project
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 px-4 py-2 rounded-md bg-blue-600 hover:bg-blue-500 transition-all w-full sm:w-auto text-center"
           >
-            <ExternalLink size={18} /> Live
+            <ExternalLink size={18} /> Link
           </a>
         )}
       </div>
