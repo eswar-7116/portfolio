@@ -14,6 +14,7 @@ export default function NavBar() {
     { label: "Home", href: "/" },
     { label: "About", href: pathname === "/" ? "#about" : "/#about" },
     { label: "Contact", href: pathname === "/" ? "#contact" : "/#contact" },
+    { label: "Skills", href: pathname === "/" ? "#skills" : "/#skills" },
     { label: "Projects", href: "/projects" },
     { label: "AMA Bot", href: pathname === "/" ? "#ama" : "/#ama" },
   ];

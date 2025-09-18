@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Projects() {
   return (
     <>
-      <div className="text-xl max-w-3xl mx-auto mt-12 sm:mt-16 px-4 sm:px-0">
+      <div className="text-xl max-w-3xl mx-auto px-4 sm:px-0">
         <h1
           className="text-3xl sm:text-4xl font-bold w-full text-center text-blue-500"
           id="projects-heading"
