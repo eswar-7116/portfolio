@@ -2,6 +2,7 @@ import About from "@/components/layout/About";
 import AMA from "@/components/layout/AMA";
 import Contact from "@/components/layout/Contact";
 import Projects from "@/components/layout/Projects";
+import Skills from "@/components/layout/Skills"; // ← New
 import lobster from "@/fonts/lobster";
 
 export default function Home() {
@@ -35,14 +36,17 @@ export default function Home() {
         <About />
       </section>
 
-      {/* Projects */}
-      <section id="projects" aria-labelledby="projects-heading">
-        <Projects />
-      </section>
-
       {/* AMA */}
       <section id="ama" className="scroll-mt-30" aria-label="Ask Anything about Eswar Dudi">
         <AMA />
+      </section>
+
+      {/* Skills */}
+      <Skills />
+
+      {/* Projects */}
+      <section id="projects" aria-labelledby="projects-heading">
+        <Projects />
       </section>
     </main>
   );
