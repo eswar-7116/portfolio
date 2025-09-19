@@ -1,5 +1,11 @@
 import ProjectDetails from "@/components/reusable/ProjectDetails";
 import projects from "@/data/projects";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Eswar Dudi's Projects",
+  description: "A showcase of projects built by Eswar Dudi.",
+};
 
 export default function ProjectsPage() {
   return (
