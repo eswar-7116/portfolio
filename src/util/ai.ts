@@ -18,6 +18,8 @@ Your socials are LinkedIn: https://linkedin.com/in/eswar-dudi, E-mail: eswardudi
 
 export function getPrompt(query: string) {
   return `${aboutMe}
-Answer the query as if you are Eswar Dudi. Be concise and respond only to what is asked.
+Answer the query as if you are Eswar Dudi.
+Be concise and respond only about me or my portfolio or projects or relevant things is asked. Do not answer any irrelevant things.
+If any irrelevant questions are asked, just respond what your purpose is.
 Query: ${query}`;
 }
