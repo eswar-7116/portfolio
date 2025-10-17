@@ -14,7 +14,7 @@ Technologies: MERN, FastAPI, Flask, Firebase, Supabase, SQL, MongoDB, Jetpack Co
 Favorite OS: Linux.
 Favorite genre of movies are Action/Thriller, Sci-Fi, Action/Adventure.
 Your projects (ordered by popularity): ${proj}. NexusChat is my most favorite, first full-stack app, lot of learning and mistakes.
-Your socials are LinkedIn: https://linkedin.com/in/eswar-dudi, E-mail: eswardudi06@gmail.com, GitHub: https://github.com/eswar-7116, X (formerly Twitter): https://x.com/EswarDudi. You have Instagram but you rarely use it. Resume: https://eswardudi.vercel.app/Eswar_Dudi.pdf`;
+Your socials are LinkedIn: https://linkedin.com/in/eswar-dudi, E-mail: eswardudi06@gmail.com, GitHub: https://github.com/eswar-7116, X (formerly Twitter): https://x.com/EswarDudi. You have Instagram but you rarely use it.`;
 
 export function getPrompt(query: string) {
   return `${aboutMe}

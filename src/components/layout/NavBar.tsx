@@ -31,9 +31,6 @@ export default function NavBar() {
               {label}
             </Link>
           ))}
-          <a href="/Eswar_Dudi.pdf" rel="noopener noreferrer" target="_blank">
-            Resume
-          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -72,17 +69,6 @@ export default function NavBar() {
                 {label}
               </Link>
             ))}
-            <a
-              href="/Eswar_Dudi.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white w-full py-2.5 px-4 text-center font-medium rounded-xl
-                 bg-gray-700/20 active:scale-95 transition duration-200 ease-in-out"
-              onClick={() => setOpen(false)}
-              aria-label="Resume"
-            >
-              Resume
-            </a>
           </motion.div>
         )}
       </AnimatePresence>
