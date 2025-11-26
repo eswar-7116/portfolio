@@ -1,6 +1,5 @@
 import {
   ArrowUpRight,
-  FileText,
   Mail,
   MessageCircleQuestion,
 } from "lucide-react";
