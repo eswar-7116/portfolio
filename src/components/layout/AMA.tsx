@@ -25,6 +25,8 @@ export default function AMA() {
 
       if (!res.body) throw new Error("No response body.");
 
+      if (!res.ok) throw new Error("Bad response status!");
+
       const reader = res.body.getReader();
       const decoder = new TextDecoder("utf-8");
       let done = false;
@@ -38,7 +40,7 @@ export default function AMA() {
         }
       }
     } catch (err) {
-      console.error("Error reading stream:", err);
+      console.error("Error in AMA bot:", err);
       setAnswer("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
@@ -73,7 +75,7 @@ export default function AMA() {
       </form>
 
       {/* Output */}
-      <div className="w-full md:w-3/4 mt-8 min-h-50 overflow-y-auto p-4 rounded-lg text-left bg-blue-950/60 text-white text-xl prose">
+      <div className="w-full md:w-3/4 mt-8 min-h-50 overflow-y-auto p-4 rounded-lg text-left bg-gray-200/10 text-white text-xl prose">
         {answer ? (
           <ReactMarkdown
             components={{
