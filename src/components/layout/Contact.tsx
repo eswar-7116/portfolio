@@ -25,7 +25,7 @@ export default function Contact() {
           className="flex gap-1.5 items-center transition-transform will-change-transform hover:scale-103"
         >
           <Mail />
-          <span className="break-all">eswardudi06@gmail.com</span>
+          <span className="break-all">E-mail</span>
           <ArrowUpRight />
         </Link>
         <Link
@@ -34,7 +34,7 @@ export default function Contact() {
           className="flex gap-1.5 items-center transition-transform will-change-transform hover:scale-103"
         >
           <LinkedInIcon className="mb-1" />
-          eswar-dudi
+          LinkedIn
           <ArrowUpRight />
         </Link>
         <Link
@@ -43,7 +43,7 @@ export default function Contact() {
           className="flex gap-1.5 items-center transition-transform will-change-transform hover:scale-103"
         >
           <GitHubIcon />
-          eswar-7116
+          GitHub
           <ArrowUpRight />
         </Link>
         <Link
@@ -52,7 +52,7 @@ export default function Contact() {
           className="flex gap-1.5 items-center transition-transform will-change-transform hover:scale-103"
         >
           <TwitterXIcon />
-          EswarDudi
+          X
           <ArrowUpRight />
         </Link>
       </div>
