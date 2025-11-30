@@ -1,0 +1,25 @@
+# Eswar Dudi Portfolio
+
+> Software Developer and Computer Science student passionate about Backend Systems, AI tools, and scalable Web Applications.
+
+## Core Pages
+- [Home](https://eswardudi.vercel.app/)
+- [Projects List](https://eswardudi.vercel.app/projects)
+
+## Top Projects
+- [Guntainer](https://github.com/eswar-7116/guntainer) - A lightweight container runtime in Go that isolates processes using Linux namespaces with automatic Alpine rootfs setup.
+- [NexusChat](https://github.com/eswar-7116/NexusChat) - A real-time chat app with P2P messaging, JWT authentication, user presence, and message status tracking.
+- [CalGist](https://github.com/eswar-7116/CalGist) - A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.
+- [SynapseLearn](https://github.com/eswar-7116/synapselearn) - An AI-powered task generator and learning platform with analytics, task tracking, and personalized study plans.
+- [AlterTone](https://github.com/eswar-7116/altertone) - A web app that uses AI to change the tone of your text, for example turning sad sentences into happy or professional ones, optimized for strong SEO visibility.
+
+## Skills
+- **Languages**: Go, Python, TypeScript, Java, JavaScript, C, Kotlin
+- **Libraries & Frameworks**: React, Next.js, Tailwind CSS, Zustand, Bootstrap, Node.js, Express, Socket.io, Flask, FastAPI, Jetpack Compose, Spring Boot
+- **Tools & Platforms**: Firebase, Supabase, Oracle, Git, GitHub, Docker, Postman, NPM, MongoDB, PostgreSQL, MySQL, SQLite
+
+## Contact
+- [Email](mailto:eswardudi06@gmail.com)
+- [LinkedIn](https://linkedin.com/in/eswar-dudi)
+- [GitHub](https://github.com/eswar-7116)
+- [X (Twitter)](https://x.com/eswardudi)
