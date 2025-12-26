@@ -2,6 +2,14 @@ import { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
+    title: "HTTP Caching Proxy",
+    skills: ["Go", "HTTP", "Gin", "LRU", "Networking"],
+    description:
+      "A simple HTTP caching proxy server implemented in Go. It serves as a basic solution for caching HTTP responses, using an in-memory map to store the cache entries with time-based and LRU eviction policy.",
+    github: "https://github.com/eswar-7116/http-caching-proxy",
+    link: null,
+  },
+  {
     title: "Guntainer",
     skills: ["Go", "Containers", "Linux Namespaces", "UID/GID Remapping"],
     description:
