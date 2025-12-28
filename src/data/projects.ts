@@ -1,12 +1,12 @@
 import { Project } from "@/types/project";
 
 const projects: Project[] = [
-  {
-    title: "HTTP Caching Proxy",
-    skills: ["Go", "HTTP", "Gin", "LRU", "Networking"],
+  { 
+    title: "Glambdar",
+    skills: ["Go", "Node.js", "Docker", "Serverless", "Gin"],
     description:
-      "A simple HTTP caching proxy server implemented in Go. It serves as a basic solution for caching HTTP responses, using an in-memory map to store the cache entries with time-based and LRU eviction policy.",
-    github: "https://github.com/eswar-7116/http-caching-proxy",
+      "A minimal serverless runtime built for Node.js functions in Go. It packages and executes Node.js functions in isolated environments with a simple workflow for deploying and invoking code.",
+    github: "https://github.com/eswar-7116/glambdar",
     link: null,
   },
   {
@@ -15,6 +15,14 @@ const projects: Project[] = [
     description:
       "A lightweight container runtime in Go that isolates processes using Linux namespaces with automatic Alpine rootfs setup.",
     github: "https://github.com/eswar-7116/guntainer",
+    link: null,
+  },
+  {
+    title: "HTTP Caching Proxy",
+    skills: ["Go", "HTTP", "Gin", "LRU", "Networking"],
+    description:
+      "A simple HTTP caching proxy server implemented in Go. It serves as a basic solution for caching HTTP responses, using an in-memory map to store the cache entries with time-based and LRU eviction policy.",
+    github: "https://github.com/eswar-7116/http-caching-proxy",
     link: null,
   },
   {
