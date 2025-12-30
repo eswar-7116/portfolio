@@ -85,6 +85,22 @@ const projects: Project[] = [
     link: "https://altertone-two.vercel.app/",
   },
   {
+    title: "Tic-Tac-Toe AI bot",
+    skills: [
+      "React.js",
+      "TypeScript",
+      "AI",
+      "Minimax",
+      "Algorithms",
+      "DFS",
+      "Tailwind",
+    ],
+    description:
+      "An optimal Tic-Tac-Toe AI that uses the Minimax algorithm with alpha-beta pruning and depth-aware evaluation to select the best move for winning. The bot assumes perfect play from both sides and guarantees a win when possible, otherwise a draw.",
+    github: "https://github.com/eswar-7116/tictactoe-ai",
+    link: null,
+  },
+  {
     title: "Tgo",
     skills: ["Go", "Cobra", "CLI", "sqlite3", "sqlc"],
     description:
