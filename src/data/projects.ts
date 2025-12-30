@@ -1,7 +1,7 @@
 import { Project } from "@/types/project";
 
 const projects: Project[] = [
-  { 
+  {
     title: "Glambdar",
     skills: ["Go", "Node.js", "Docker", "Serverless", "Gin"],
     description:
@@ -81,51 +81,70 @@ const projects: Project[] = [
     skills: ["Next.js", "React", "Google Gemini", "SEO Optimization"],
     description:
       "A web app that uses AI to change the tone of your text, for example turning sad sentences into happy or professional ones, optimized for strong SEO visibility.",
-    github: "https://github.com/eswar-7116/NexusChat",
-    link: "https://nexuschat-aglp.onrender.com/",
+    github: "https://github.com/eswar-7116/altertone",
+    link: "https://altertone-two.vercel.app/",
   },
   {
     title: "This Portfolio Website",
-    skills: ["TypeScript", "Next.js", "Tailwind CSS", "Gemini API", "SEO Optimization", "React"],
-    description: "A showcase of my skills and projects across full-stack, AI, systems programming and Android development.",
+    skills: [
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "Gemini API",
+      "SEO Optimization",
+      "React",
+    ],
+    description:
+      "A showcase of my skills and projects across full-stack, AI, systems programming and Android development.",
     github: "https://github.com/eswar-7116/portfolio",
-    link: "https://eswardudi.vercel.app"
+    link: "https://eswardudi.vercel.app",
   },
   {
     title: "HTTP Server from scratch in C",
     skills: ["C", "Unix Socket API", "HTTP Protocol"],
-    description: "A minimal HTTP web server built from scratch in C using raw TCP sockets, without any frameworks or libraries. Built to deeply understand how web servers work at the lowest level.",
+    description:
+      "A minimal HTTP web server built from scratch in C using raw TCP sockets, without any frameworks or libraries. Built to deeply understand how web servers work at the lowest level.",
     github: "https://github.com/eswar-7116/c-web-server",
     link: null,
   },
   {
     title: "VoxoLaunch",
     skills: ["Python", "Speech Recognition", "Text-to-Speech (TTS)"],
-    description: "A Python-based voice-controlled app launcher that executes commands like opening apps, playing videos, and performing searches using speech recognition and TTS.",
+    description:
+      "A Python-based voice-controlled app launcher that executes commands like opening apps, playing videos, and performing searches using speech recognition and TTS.",
     github: "https://github.com/eswar-7116/VoxoLaunch",
     link: null,
   },
   {
     title: "python-ffmpeg Docker Image",
     skills: ["Docker", "Linux", "Python", "FFmpeg"],
-    description: "A lightweight Docker image combining python3-slim with FFmpeg and Git pre-installed, designed for multimedia pipelines and automation workflows.",
+    description:
+      "A lightweight Docker image combining python3-slim with FFmpeg and Git pre-installed, designed for multimedia pipelines and automation workflows.",
     github: "https://github.com/eswar-7116/python-ffmpeg-docker",
     link: "https://hub.docker.com/r/eswardudi/python-ffmpeg",
   },
   {
     title: "TermLock",
     skills: ["Shell Scripting", "Linux"],
-    description: "A lightweight shell script that password-protects terminal startup, blocking escape attempts and ensuring secure access with zero dependencies.",
+    description:
+      "A lightweight shell script that password-protects terminal startup, blocking escape attempts and ensuring secure access with zero dependencies.",
     github: "https://github.com/eswar-7116/termlock",
     link: null,
   },
   {
     title: "Tic-Tac-Toe Android App",
-    skills: ["Android", "Kotlin", "Jetpack Compose", "UI Design", "State Management"],
-    description: "A 2-player TicTacToe Android game built using Kotlin and Jetpack Compose, featuring custom UI and state handling.",
+    skills: [
+      "Android",
+      "Kotlin",
+      "Jetpack Compose",
+      "UI Design",
+      "State Management",
+    ],
+    description:
+      "A 2-player TicTacToe Android game built using Kotlin and Jetpack Compose, featuring custom UI and state handling.",
     github: "https://github.com/eswar-7116/TicTacToe",
     link: null,
-  }
+  },
 ];
 
 export default projects;
