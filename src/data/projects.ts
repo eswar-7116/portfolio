@@ -85,6 +85,14 @@ const projects: Project[] = [
     link: "https://altertone-two.vercel.app/",
   },
   {
+    title: "Tgo",
+    skills: ["Go", "Cobra", "CLI", "sqlite3", "sqlc"],
+    description:
+      "A simple command-line task manager implemented in Go. It uses SQLite for persistent storage and provides a clean CLI interface using Cobra.",
+    github: "https://github.com/eswar-7116/tgo",
+    link: null,
+  },
+  {
     title: "This Portfolio Website",
     skills: [
       "TypeScript",
