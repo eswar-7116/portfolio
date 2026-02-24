@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function About() {
   return (
     <>
-      <div className="text-lg sm:text-xl max-w-3xl mx-auto text-center leading-relaxed space-y-6 mt-8 sm:mt-16 px-4 sm:px-0">
+      <div className="text-lg sm:text-xl max-w-3xl mx-auto text-center leading-relaxed space-y-6 mt-8 sm:mt-16 px-4 sm:px-0 text-justify">
         <h1 className="text-3xl sm:text-4xl font-bold text-blue-500" id="about-heading">
           About me
         </h1>
