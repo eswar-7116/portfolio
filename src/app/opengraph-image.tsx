@@ -63,22 +63,24 @@ export default function Image() {
         Backend Systems · AI Integrations · Full-Stack
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
-        {["Go", "Python", "TypeScript", "Docker", "React"].map((tag) => (
-          <div
-            key={tag}
-            style={{
-              border: "1px solid #00ff88",
-              color: "#00ff88",
-              padding: "8px 20px",
-              borderRadius: "8px",
-              fontSize: "20px",
-              fontFamily: "monospace",
-              background: "rgba(0, 255, 136, 0.05)",
-            }}
-          >
-            {tag}
-          </div>
-        ))}
+        {["Go", "Python", "TypeScript", "Java", "Docker", "React"].map(
+          (tag) => (
+            <div
+              key={tag}
+              style={{
+                border: "1px solid #00ff88",
+                color: "#00ff88",
+                padding: "8px 20px",
+                borderRadius: "8px",
+                fontSize: "20px",
+                fontFamily: "monospace",
+                background: "rgba(0, 255, 136, 0.05)",
+              }}
+            >
+              {tag}
+            </div>
+          ),
+        )}
       </div>
     </div>,
     { ...size },

@@ -13,9 +13,9 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const title = "Eswar Dudi | Software Developer - Go, Backend, AI";
+const title = "Eswar Dudi | Software Developer";
 const description =
-  "Eswar Dudi is a software developer specializing in backend systems, Go, and AI integrations. Explore projects like Guntainer, NexusChat, and SynapseLearn.";
+  "Eswar Dudi is a software developer specializing in full stack development, backend systems, and AI integrations. Explore projects like Guntainer, NexusChat, and SynapseLearn.";
 const myName = "Eswar Dudi";
 const url = "https://eswardudi.vercel.app";
 
