@@ -48,59 +48,91 @@ export default function AMA() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center m-6 sm:m-10 px-4 sm:px-0">
-      <h1 className="text-3xl sm:text-4xl font-bold text-blue-500">
-        Ask Me Anything!
-      </h1>
-
-      {/* Input field and submit button */}
-      <form
-        onSubmit={handleQuerySubmit}
-        className="w-full flex gap-2 items-center justify-center mt-8"
-      >
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Ask about me or my projects..."
-          className="w-full md:w-3/7 h-12 text-lg mr-4 p-2 rounded-lg text-black bg-white shadow-lg shadow-black"
-          aria-label="Ask a question about me or my projects"
-        />
-        <button
-          className="cursor-pointer bg-blue-700 rounded-lg p-3 transition-transform will-change-transform hover:scale-105 active:scale-95 shadow shadow-black"
-          disabled={loading}
+    <div className="max-w-5xl mx-auto px-4 sm:px-0 py-20" id="ama">
+      <div className="flex flex-col items-center">
+        <h2
+          className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
+          id="ama-heading"
         >
-          {loading ? <Loader className="animate-spin" /> : <SendHorizonal />}
-        </button>
-      </form>
+          <span className="text-accent underline decoration-accent/30 underline-offset-8">
+            04.
+          </span>{" "}
+          Ask Me Anything!
+        </h2>
 
-      {/* Output */}
-      <div className="w-full md:w-3/4 mt-8 min-h-50 overflow-y-auto p-4 rounded-lg text-left bg-gray-200/10 text-white text-xl prose">
-        {answer ? (
-          <ReactMarkdown
-            components={{
-              a: ({ ...props }) => (
-                <a
-                  className="text-blue-400 underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  {...props}
-                />
-              ),
-            }}
+        {/* Input field and submit button */}
+        <form
+          onSubmit={handleQuerySubmit}
+          className="w-full flex gap-3 mt-12 mb-8"
+        >
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Ask about my projects, stack, or experience..."
+            className="flex-grow h-12 px-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground"
+            aria-label="Ask a question about me or my projects"
+          />
+          <button
+            className="px-6 rounded-xl bg-accent text-background font-bold hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-95 flex items-center justify-center disabled:opacity-50"
+            disabled={loading}
           >
-            {answer}
-          </ReactMarkdown>
-        ) : loading ? (
-          <p className="animate-pulse">Thinking...</p>
-        ) : (
-          <div className="text-gray-500 mt-2">
-            Example: <br />
-            &quot;Tell me about your top projects&quot; <br />
-            &quot;What is NexusChat?&quot; <br />
-            &quot;Explain Guntainer in simple terms&quot;
-          </div>
-        )}
+            {loading ? (
+              <Loader className="animate-spin" size={20} />
+            ) : (
+              <SendHorizonal size={20} />
+            )}
+          </button>
+        </form>
+
+        {/* Output */}
+        <div className="w-full min-h-[200px] p-6 rounded-2xl bg-foreground/[0.02] border border-foreground/5 font-body">
+          {answer ? (
+            <div className="prose prose-invert max-w-none prose-p:text-foreground/80 prose-strong:text-accent prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1 prose-code:rounded">
+              <ReactMarkdown
+                components={{
+                  a: ({ ...props }) => (
+                    <a
+                      className="text-accent underline decoration-accent/30 hover:decoration-accent transition-all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      {...props}
+                    />
+                  ),
+                }}
+              >
+                {answer}
+              </ReactMarkdown>
+            </div>
+          ) : loading ? (
+            <div className="flex items-center gap-3 text-accent font-mono text-sm animate-pulse">
+              <span className="w-2 h-2 rounded-full bg-accent animate-ping" />
+              Processing request...
+            </div>
+          ) : (
+            <div className="space-y-4">
+              <p className="text-sm font-mono text-foreground/30 uppercase tracking-widest text-center">
+                Suggested Queries:
+              </p>
+              <div className="flex flex-wrap gap-3 justify-center">
+                {[
+                  "Tell me about your top projects",
+                  "What is NexusChat?",
+                  "Explain Guntainer in simple terms",
+                ].map((example) => (
+                  <button
+                    key={example}
+                    type="button"
+                    onClick={() => setQuery(example)}
+                    className="text-xs font-mono px-3 py-1.5 rounded-lg border border-foreground/5 bg-foreground/[0.02] text-foreground/50 hover:border-accent/30 hover:text-accent transition-all"
+                  >
+                    {example}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

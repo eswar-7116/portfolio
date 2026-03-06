@@ -4,29 +4,41 @@ import Link from "next/link";
 
 export default function Projects() {
   return (
-    <>
-      <div className="text-xl max-w-3xl mx-auto px-4 sm:px-0">
-        <h1
-          className="text-3xl sm:text-4xl font-bold w-full text-center text-blue-500"
-          id="projects-heading"
-        >
-          Some of my top projects
-        </h1>
+    <div className="max-w-5xl mx-auto">
+      <div className="space-y-12">
+        <div className="flex flex-col sm:flex-row justify-between items-end gap-6">
+          <h2
+            className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
+            id="projects-heading"
+          >
+            <span className="text-accent underline decoration-accent/30 underline-offset-8">
+              03.
+            </span>{" "}
+            Projects
+          </h2>
+          <Link
+            href="/projects"
+            className="text-accent text-sm font-mono hover:underline underline-offset-4"
+          >
+            view_all_projects()
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.slice(0, 3).map((proj, i) => (
+            <ProjectDetails project={proj} key={i} className="h-full" />
+          ))}
+        </div>
+
+        <div className="flex justify-center mt-8">
+          <Link
+            href="/projects"
+            className="px-6 py-3 rounded-lg border border-accent/20 bg-accent/5 text-accent font-mono text-sm hover:bg-accent/10 transition-colors"
+          >
+            explore_more_work()
+          </Link>
+        </div>
       </div>
-      <div className="flex flex-col items-center-safe justify-center-safe p-4 sm:p-8 gap-4 sm:gap-6">
-        {projects.slice(0, 5).map((proj, i) => (
-          <ProjectDetails
-            project={proj}
-            key={i}
-            className="bg-blue-900 w-full sm:max-w-3xl p-4 rounded-md"
-          />
-        ))}
-        <Link href="/projects">
-          <button className="bg-blue-800 px-4 py-3 rounded-lg mt-3 sm:mt-5 w-full sm:w-auto cursor-pointer transition-transform will-change-transform hover:scale-105">
-            Explore more projects
-          </button>
-        </Link>
-      </div>
-    </>
+    </div>
   );
 }

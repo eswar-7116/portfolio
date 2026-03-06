@@ -3,41 +3,83 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --font-heading: var(--font-jetbrains-mono);
+  --font-body: var(--font-dm-sans);
 }
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
+  --background: #050505;
+  --foreground: #f5f5f5;
+  --accent: #00ff88;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-body),
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 
-/* Ball expand animation */
-@keyframes ball-expand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-mono {
+  font-family:
+    var(--font-heading), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+}
+
+/* Typing animation */
+.typing-container {
+  display: inline-block;
+}
+
+.typing-text {
+  border-right: 2px solid var(--accent);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation:
+    typing 3s steps(40, end) infinite,
+    cursor 0.75s step-end infinite;
+}
+
+@keyframes typing {
   0% {
-    scale: 0.5;
-    opacity: 0.7;
+    width: 0;
   }
-
   50% {
-    scale: 1.5;
-    opacity: 0.55;
+    width: 100%;
   }
-
+  90% {
+    width: 100%;
+  }
   100% {
-    scale: 2;
-    opacity: 0.4;
+    width: 0;
   }
 }
 
-.animate-ball-expand {
-  animation: ball-expand 6s ease-out forwards;
+@keyframes cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--accent);
+  }
 }
 
 /* Slide down animation */
@@ -56,27 +98,10 @@ body {
   animation: slide-down 0.3s ease-out;
 }
 
-/* Shiny text animation */
-@keyframes shine {
-  0% {
-    background-position: 100%;
-  }
-  100% {
-    background-position: -100%;
-  }
-}
-
-.shiny-text {
-  color: #1a85ffa4;
-  background: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 40%,
-    rgba(255, 255, 255, 0.9) 50%,
-    rgba(255, 255, 255, 0) 60%
-  );
-  background-size: 200% 100%;
-  background-clip: text;
-  animation: shine 3s linear infinite;
+/* Glow effect */
+.glow-on-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+  border-color: var(--accent);
 }
 
 /* Wiggle animation */
@@ -106,4 +131,40 @@ body {
 
 .animate-wiggle {
   animation: wiggle 3s ease-out infinite;
+}
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+/* Shiny button effect */
+.shiny-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-button::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: rotate(30deg);
+  transition: none;
+  animation: shimmer 3s infinite;
+  filter: blur(5px);
+}
+
+@keyframes shimmer {
+  0%   { left: -60%; opacity: 0; }
+  5%   { left: -60%; opacity: 1; }
+  55%  { left: 140%; opacity: 1; }
+  56%  { opacity: 0; }
+  100% { left: 140%; opacity: 0; }
 }

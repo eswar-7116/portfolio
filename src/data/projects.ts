@@ -2,75 +2,48 @@ import { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
-    title: "Glambdar",
-    skills: ["Go", "Node.js", "Docker", "Serverless", "Gin"],
-    description:
-      "A minimal serverless runtime built for Node.js functions in Go. It packages and executes Node.js functions in isolated environments with a simple workflow for deploying and invoking code.",
-    github: "https://github.com/eswar-7116/glambdar",
-    link: null,
-  },
-  {
     title: "Guntainer",
-    skills: ["Go", "Containers", "Linux Namespaces", "UID/GID Remapping"],
+    skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "Alpine rootfs"],
     description:
-      "A lightweight container runtime in Go that isolates processes using Linux namespaces with automatic Alpine rootfs setup.",
+      "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
     github: "https://github.com/eswar-7116/guntainer",
     link: null,
   },
   {
-    title: "HTTP Caching Proxy",
-    skills: ["Go", "HTTP", "Gin", "LRU", "Networking"],
+    title: "Glambdar",
+    skills: ["Go", "Docker", "Node.js", "Serverless"],
     description:
-      "A simple HTTP caching proxy server implemented in Go. It serves as a basic solution for caching HTTP responses, using an in-memory map to store the cache entries with time-based and LRU eviction policy.",
-    github: "https://github.com/eswar-7116/http-caching-proxy",
+      "A minimal serverless runtime for Node.js functions, built in Go. Packages and executes functions in isolated Docker environments with a dead-simple deploy workflow.",
+    github: "https://github.com/eswar-7116/glambdar",
     link: null,
   },
   {
     title: "NexusChat",
-    skills: [
-      "MongoDB",
-      "Express",
-      "React",
-      "Tailwind CSS",
-      "Node.js",
-      "JWT Auth",
-      "Websockets",
-      "Socket.io",
-      "Cloudinary",
-      "Docker",
-    ],
+    skills: ["MERN Stack", "Socket.io", "JWT Auth", "Docker", "Cloudinary"],
     description:
-      "A real-time chat app with P2P messaging, JWT authentication, user presence, and message status tracking.",
+      "Full-stack real-time chat with P2P messaging, JWT auth, WebSocket presence, and message status; deployed via Docker on a MERN stack with Cloudinary media support.",
     github: "https://github.com/eswar-7116/NexusChat",
     link: "https://nexuschat-aglp.onrender.com/",
   },
   {
     title: "SynapseLearn",
-    skills: [
-      "Next.js",
-      "React",
-      "Google Gemini",
-      "Clerk",
-      "PostgreSQL",
-      "Neon DB",
-      "Drizzle ORM",
-      "ShadCN",
-      "Tailwind CSS",
-    ],
+    skills: ["Next.js", "Google Gemini", "Clerk", "Neon DB", "Drizzle ORM"],
     description:
-      "An AI-powered task generator and learning platform with analytics, task tracking, and personalized study plans.",
+      "AI-powered study platform using Google Gemini for personalized task generation, with analytics, task tracking, and a full auth + DB stack (Clerk + Neon + Drizzle ORM).",
     github: "https://github.com/eswar-7116/SynapseLearn",
     link: "https://synapse-learn.netlify.app/",
   },
   {
+    title: "HTTP Caching Proxy",
+    skills: ["Go", "Networking", "LRU Cache", "In-memory storage"],
+    description:
+      "A production-style HTTP caching proxy in Go with in-memory storage, time-based expiry, and LRU eviction; built to understand how caching layers work at the network level.",
+    github: "https://github.com/eswar-7116/http-caching-proxy",
+    link: null,
+  },
+  {
     title: "CalGist",
-    skills: [
-      "Next.js",
-      "Supabase",
-      "PostgreSQL",
-      "Google Gemini",
-      "Google Calendar API",
-    ],
+    skills: ["Next.js", "Supabase", "Google Gemini", "Google Calendar API"],
     description:
       "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
     github: "https://github.com/eswar-7116/CalGist",
@@ -78,54 +51,23 @@ const projects: Project[] = [
   },
   {
     title: "AlterTone",
-    skills: ["Next.js", "React", "Google Gemini", "SEO Optimization"],
+    skills: ["Next.js", "Google Gemini", "SEO Optimization"],
     description:
       "A web app that uses AI to change the tone of your text, for example turning sad sentences into happy or professional ones, optimized for strong SEO visibility.",
     github: "https://github.com/eswar-7116/altertone",
     link: "https://altertone-two.vercel.app/",
   },
   {
-    title: "Tic-Tac-Toe AI bot",
-    skills: [
-      "React.js",
-      "TypeScript",
-      "AI",
-      "Minimax",
-      "Algorithms",
-      "DFS",
-      "Tailwind",
-    ],
-    description:
-      "An optimal Tic-Tac-Toe AI that uses the Minimax algorithm with alpha-beta pruning and depth-aware evaluation to select the best move for winning. The bot assumes perfect play from both sides and guarantees a win when possible, otherwise a draw.",
-    github: "https://github.com/eswar-7116/tictactoe-ai",
-    link: null,
-  },
-  {
     title: "Tgo",
-    skills: ["Go", "Cobra", "CLI", "sqlite3", "sqlc"],
+    skills: ["Go", "Cobra", "SQLite3", "CLI"],
     description:
       "A simple command-line task manager implemented in Go. It uses SQLite for persistent storage and provides a clean CLI interface using Cobra.",
     github: "https://github.com/eswar-7116/tgo",
     link: null,
   },
   {
-    title: "This Portfolio Website",
-    skills: [
-      "TypeScript",
-      "Next.js",
-      "Tailwind CSS",
-      "Gemini API",
-      "SEO Optimization",
-      "React",
-    ],
-    description:
-      "A showcase of my skills and projects across full-stack, AI, systems programming and Android development.",
-    github: "https://github.com/eswar-7116/portfolio",
-    link: "https://eswardudi.vercel.app",
-  },
-  {
-    title: "HTTP Server from scratch in C",
-    skills: ["C", "Unix Socket API", "HTTP Protocol"],
+    title: "HTTP Server in C",
+    skills: ["C", "Unix Socket API", "TCP/IP"],
     description:
       "A minimal HTTP web server built from scratch in C using raw TCP sockets, without any frameworks or libraries. Built to deeply understand how web servers work at the lowest level.",
     github: "https://github.com/eswar-7116/c-web-server",
@@ -133,40 +75,18 @@ const projects: Project[] = [
   },
   {
     title: "VoxoLaunch",
-    skills: ["Python", "Speech Recognition", "Text-to-Speech (TTS)"],
+    skills: ["Python", "Speech Recognition", "TTS"],
     description:
-      "A Python-based voice-controlled app launcher that executes commands like opening apps, playing videos, and performing searches using speech recognition and TTS.",
+      "A Python-based voice-controlled app launcher that executes commands like opening apps and performing searches using speech recognition and TTS.",
     github: "https://github.com/eswar-7116/VoxoLaunch",
     link: null,
   },
   {
-    title: "python-ffmpeg Docker Image",
-    skills: ["Docker", "Linux", "Python", "FFmpeg"],
-    description:
-      "A lightweight Docker image combining python3-slim with FFmpeg and Git pre-installed, designed for multimedia pipelines and automation workflows.",
-    github: "https://github.com/eswar-7116/python-ffmpeg-docker",
-    link: "https://hub.docker.com/r/eswardudi/python-ffmpeg",
-  },
-  {
     title: "TermLock",
-    skills: ["Shell Scripting", "Linux"],
+    skills: ["Shell Scripting", "Linux Security"],
     description:
       "A lightweight shell script that password-protects terminal startup, blocking escape attempts and ensuring secure access with zero dependencies.",
     github: "https://github.com/eswar-7116/termlock",
-    link: null,
-  },
-  {
-    title: "Tic-Tac-Toe Android App",
-    skills: [
-      "Android",
-      "Kotlin",
-      "Jetpack Compose",
-      "UI Design",
-      "State Management",
-    ],
-    description:
-      "A 2-player TicTacToe Android game built using Kotlin and Jetpack Compose, featuring custom UI and state handling.",
-    github: "https://github.com/eswar-7116/TicTacToe",
     link: null,
   },
 ];

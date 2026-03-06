@@ -1,53 +1,60 @@
+import Hero from "@/components/layout/Hero";
 import About from "@/components/layout/About";
 import AMA from "@/components/layout/AMA";
 import Contact from "@/components/layout/Contact";
 import Projects from "@/components/layout/Projects";
-import Skills from "@/components/layout/Skills"; // ← New
-import lobster from "@/fonts/lobster";
+import Skills from "@/components/layout/Skills";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="w-full h-full px-4 sm:px-20" role="main">
-      <header
-        className="w-full p-6 sm:p-10 flex flex-col items-center-safe justify-center-safe"
-        role="banner"
-        aria-labelledby="home-heading"
-      >
-        <div>
-          <h1
-            className={`text-5xl sm:text-7xl ${lobster.className}`}
-            id="home-heading"
-          >
-            Hello<span className="inline-block animate-wiggle">👋</span>,
-          </h1>
-          <div className="mt-4 sm:mt-5 flex items-center-safe text-4xl sm:text-7xl font-semibold">
-            I&apos;m&nbsp;<span className="text-blue-700 shiny-text">Eswar</span>.
-          </div>
-        </div>
-      </header>
+    <main className="w-full h-full" role="main">
+      <Hero />
 
-      {/* Contact */}
-      <section id="contact" className="scroll-mt-30" aria-label="Contact Me">
-        <Contact />
-      </section>
+      <div className="px-4 sm:px-20 space-y-32 mb-20">
+        {/* About */}
+        <section
+          id="about"
+          className="scroll-mt-24"
+          aria-labelledby="about-heading"
+        >
+          <About />
+        </section>
 
-      {/* About */}
-      <section id="about" className="scroll-mt-30" aria-labelledby="about-heading">
-        <About />
-      </section>
+        {/* Skills */}
+        <section
+          id="skills"
+          className="scroll-mt-24"
+          aria-label="Professional Skills"
+        >
+          <Skills />
+        </section>
 
-      {/* AMA */}
-      <section id="ama" className="scroll-mt-30" aria-label="Ask Anything about Eswar Dudi">
-        <AMA />
-      </section>
+        {/* Projects */}
+        <section
+          id="projects"
+          className="scroll-mt-24"
+          aria-labelledby="projects-heading"
+        >
+          <Projects />
+        </section>
 
-      {/* Skills */}
-      <Skills />
+        {/* AMA */}
+        <section
+          id="ama"
+          className="scroll-mt-24"
+          aria-label="Ask Anything about Eswar Dudi"
+        >
+          <AMA />
+        </section>
 
-      {/* Projects */}
-      <section id="projects" aria-labelledby="projects-heading">
-        <Projects />
-      </section>
+        {/* Contact */}
+        <section id="contact" className="scroll-mt-24" aria-label="Contact Me">
+          <Contact />
+        </section>
+      </div>
+
+      <Footer />
     </main>
   );
 }
