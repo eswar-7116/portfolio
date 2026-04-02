@@ -12,7 +12,7 @@ export default function ProjectDetails({
 }: ProjectDetailsProps) {
   return (
     <div
-      className={`group relative rounded-2xl p-6 bg-foreground/[0.02] border border-foreground/10 hover:border-accent/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5 flex flex-col ${className}`}
+      className={`group relative rounded-2xl p-6 bg-foreground/2 border border-foreground/10 hover:border-accent/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5 flex flex-col ${className}`}
       {...props}
     >
       {/* Accent Top Bar */}
@@ -46,7 +46,7 @@ export default function ProjectDetails({
         </div>
       </div>
 
-      <p className="text-foreground/60 mb-6 font-body text-sm sm:text-base leading-relaxed flex-grow">
+      <p className="text-foreground/60 mb-6 font-body text-sm sm:text-base leading-relaxed grow">
         {project.description}
       </p>
 

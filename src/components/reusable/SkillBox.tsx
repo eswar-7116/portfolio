@@ -7,7 +7,7 @@ export default function SkillBox({ skill, ...props }: SkillBoxProps) {
   return (
     <li
       {...props}
-      className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 group bg-foreground/[0.03] border-foreground/10 text-foreground/60 hover:border-accent/30 hover:text-foreground"
+      className="flex items-center gap-2 px-4 py-2 rounded-full border transition-all duration-300 group bg-foreground/3 border-foreground/10 text-foreground/60 hover:border-accent/30 hover:text-foreground"
     >
       <div className="size-6 rounded-md bg-white/10 flex items-center justify-center p-1 group-hover:bg-white/20 transition-colors">
         <Image

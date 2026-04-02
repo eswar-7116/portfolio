@@ -51,7 +51,7 @@ export default function About() {
         </div>
 
         <aside className="w-full md:w-72 space-y-6">
-          <div className="p-6 rounded-2xl bg-foreground/[0.03] border border-foreground/10">
+          <div className="p-6 rounded-2xl bg-foreground/3 border border-foreground/10">
             <h3 className="text-xs font-mono text-foreground/40 uppercase tracking-widest mb-4 font-bold">
               Beyond Code
             </h3>

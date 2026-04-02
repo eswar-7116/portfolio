@@ -47,7 +47,7 @@ export default function Contact() {
           <div className="flex flex-col gap-4">
             <Link
               href="#ama"
-              className="flex items-center justify-between p-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
+              className="flex items-center justify-between p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
             >
               <div className="flex items-center gap-3 text-foreground/80 group-hover:text-accent transition-colors">
                 <MessageCircleQuestion size={20} />
@@ -61,7 +61,7 @@ export default function Contact() {
 
             <a
               href="mailto:eswardudi06@gmail.com"
-              className="flex items-center justify-between p-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
+              className="flex items-center justify-between p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
             >
               <div className="flex items-center gap-3 text-foreground/80 group-hover:text-accent transition-colors">
                 <Mail size={20} />
@@ -77,7 +77,7 @@ export default function Contact() {
                 href="https://github.com/eswar-7116"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
                 aria-label="GitHub"
               >
                 <GitHubIcon className="text-foreground/40 group-hover:text-accent transition-colors" />
@@ -86,7 +86,7 @@ export default function Contact() {
                 href="https://linkedin.com/in/eswar-dudi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon className="text-foreground/40 group-hover:text-accent transition-colors" />
@@ -95,7 +95,7 @@ export default function Contact() {
                 href="https://x.com/EswarDudi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
+                className="flex flex-col items-center justify-center p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group gap-2"
                 aria-label="X (Twitter)"
               >
                 <TwitterXIcon className="text-foreground/40 group-hover:text-accent transition-colors" />

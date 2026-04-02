@@ -70,7 +70,7 @@ export default function AMA() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Ask about my projects, stack, or experience..."
-            className="flex-grow h-12 px-4 rounded-xl bg-foreground/[0.03] border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground"
+            className="grow h-12 px-4 rounded-xl bg-foreground/3 border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground"
             aria-label="Ask a question about me or my projects"
           />
           <button
@@ -86,7 +86,7 @@ export default function AMA() {
         </form>
 
         {/* Output */}
-        <div className="w-full min-h-[200px] p-6 rounded-2xl bg-foreground/[0.02] border border-foreground/5 font-body">
+        <div className="w-full min-h-[200px] p-6 rounded-2xl bg-foreground/2 border border-foreground/5 font-body">
           {answer ? (
             <div className="prose prose-invert max-w-none prose-p:text-foreground/80 prose-strong:text-accent prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1 prose-code:rounded">
               <ReactMarkdown
@@ -124,7 +124,7 @@ export default function AMA() {
                     key={example}
                     type="button"
                     onClick={() => setQuery(example)}
-                    className="text-xs font-mono px-3 py-1.5 rounded-lg border border-foreground/5 bg-foreground/[0.02] text-foreground/50 hover:border-accent/30 hover:text-accent transition-all"
+                    className="text-xs font-mono px-3 py-1.5 rounded-lg border border-foreground/5 bg-foreground/2 text-foreground/50 hover:border-accent/30 hover:text-accent transition-all"
                   >
                     {example}
                   </button>
