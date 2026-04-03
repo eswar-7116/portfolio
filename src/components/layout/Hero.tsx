@@ -8,6 +8,7 @@ import {
   TwitterXIcon,
 } from "@/components/reusable/icons";
 import { Mail, ExternalLink, MessageCircleQuestion } from "lucide-react";
+import FloatingParticles from "@/components/models/FloatingParticles";
 
 const taglines = [
   "Loves to break & fix interesting software.",
@@ -24,7 +25,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % taglines.length);
-    }, 3000); // 3 seconds matching the typing animation in globals.css
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
@@ -34,10 +35,22 @@ export default function Hero() {
       className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 sm:px-10 overflow-hidden"
       aria-label="Hero Section"
     >
+      {/* Background 3D Particles */}
+      <FloatingParticles />
+
+      {/* Background decoration - technical grid pattern */}
+      <div
+        className="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      ></div>
+
       <div className="w-full max-w-5xl z-10">
         {/* Availability Badge */}
         <div className="mb-6 animate-slide-down">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-mono">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-mono shadow-sm">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -49,7 +62,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-10">
           <div className="flex-1">
             {/* Name */}
-            <h1 className="text-5xl sm:text-8xl font-bold mb-4 tracking-tight">
+            <h1 className="text-5xl sm:text-8xl font-bold mb-4 tracking-tight animate-fade-in">
               Eswar{" "}
               <span className="text-accent underline decoration-accent/30 decoration-wavy underline-offset-8">
                 Dudi
@@ -58,9 +71,12 @@ export default function Hero() {
 
             {/* Tagline Animation */}
             <div className="h-12 sm:h-20 mb-6 flex items-center">
-              <div className="typing-container text-2xl sm:text-4xl font-mono text-foreground/80">
+              <div className="typing-container text-sm xs:text-base sm:text-2xl md:text-4xl font-mono text-foreground/80">
                 <div className="flex flex-col">
-                  <span key={currentIndex} className="typing-text block">
+                  <span
+                    key={currentIndex}
+                    className="typing-text block whitespace-normal sm:whitespace-nowrap"
+                  >
                     {taglines[currentIndex]}
                   </span>
                 </div>
@@ -68,7 +84,7 @@ export default function Hero() {
             </div>
 
             {/* One-liner */}
-            <p className="text-lg sm:text-xl text-foreground/60 mb-10 max-w-2xl font-body italic">
+            <p className="text-lg sm:text-xl text-foreground/60 mb-10 max-w-2xl font-body italic animate-fade-in opacity-80">
               Backend systems · AI integrations · Full-stack development
             </p>
           </div>
@@ -82,34 +98,28 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-4 mb-12">
+        <div className="flex flex-wrap gap-4 mb-12 animate-slide-up">
           <Link
             href="#contact"
-            className="flex items-center justify-center gap-2 bg-accent text-background px-8 py-3 rounded-lg font-bold hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12 shiny-button"
+            className="flex items-center justify-center gap-2 bg-accent text-background px-8 py-3 rounded-lg font-bold hover:bg-accent/90 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12 shadow-lg shadow-accent/20 shiny-button"
           >
             <Mail size={18} /> Request Resume
           </Link>
           <Link
             href="#ama"
-            className="flex items-center justify-center gap-2 border border-accent/20 bg-accent/5 text-accent px-8 py-3 rounded-lg font-bold hover:bg-accent/10 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12"
+            className="flex items-center justify-center gap-2 border border-accent/20 bg-accent/5 backdrop-blur-sm text-accent px-8 py-3 rounded-lg font-bold hover:bg-accent/10 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12"
           >
             <MessageCircleQuestion size={18} /> Ask Me Anything
-          </Link>
-          <Link
-            href="/projects"
-            className="flex items-center justify-center gap-2 border border-accent/20 bg-accent/5 text-accent px-8 py-3 rounded-lg font-bold hover:bg-accent/10 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12"
-          >
-            <ExternalLink size={18} /> View Projects
           </Link>
         </div>
 
         {/* Social Links */}
-        <div className="flex flex-wrap gap-6 items-center border-t border-foreground/5 pt-8">
+        <div className="flex flex-wrap gap-6 items-center border-t border-foreground/10 pt-8 animate-fade-in">
           <a
             href="https://github.com/eswar-7116"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-colors group"
+            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
             aria-label="GitHub"
           >
             <GitHubIcon className="group-hover:scale-110 transition-transform" />
@@ -119,7 +129,7 @@ export default function Hero() {
             href="https://linkedin.com/in/eswar-dudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-colors group"
+            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
             aria-label="LinkedIn"
           >
             <LinkedInIcon className="group-hover:scale-110 transition-transform" />
@@ -129,7 +139,7 @@ export default function Hero() {
             href="https://x.com/EswarDudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-colors group"
+            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
             aria-label="X (Twitter)"
           >
             <TwitterXIcon className="group-hover:scale-110 transition-transform" />
@@ -137,26 +147,19 @@ export default function Hero() {
           </a>
           <a
             href="mailto:eswardudi06@gmail.com"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-colors group"
+            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
             aria-label="Email"
           >
             <Mail
               size={20}
               className="group-hover:scale-110 transition-transform"
             />
-            <span className="font-mono text-sm">eswardudi06@gmail.com</span>
+            <span className="font-mono text-sm truncate">
+              eswardudi06@gmail.com
+            </span>
           </a>
         </div>
       </div>
-
-      {/* Background decoration - technical grid pattern */}
-      <div
-        className="absolute inset-0 -z-10 opacity-[0.03] pointer-events-none"
-        style={{
-          backgroundImage: `linear-gradient(var(--accent) 1px, transparent 1px), linear-gradient(90deg, var(--accent) 1px, transparent 1px)`,
-          backgroundSize: "40px 40px",
-        }}
-      ></div>
     </section>
   );
 }

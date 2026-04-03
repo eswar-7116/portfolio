@@ -15,16 +15,13 @@ export default function Skills() {
           Skills
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-12">
-            <SkillGroup title="Languages" skills={languages} />
-            <SkillGroup title="Tools & Platforms" skills={tools} />
-          </div>
-          <div>
-            <SkillGroup title="Libraries & Frameworks" skills={libs} />
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
+          <SkillGroup title="Languages" skills={languages} />
+          <SkillGroup title="Libraries & Frameworks" skills={libs} />
+          <SkillGroup title="Tools & Platforms" skills={tools} />
         </div>
       </div>
     </div>
   );
 }
+

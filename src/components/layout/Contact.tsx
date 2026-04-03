@@ -20,7 +20,7 @@ export default function Contact() {
           Contact
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed font-body">
               I&apos;m currently looking for{" "}
@@ -36,10 +36,9 @@ export default function Contact() {
                 <span className="inline-block w-2 h-2 rounded-full bg-accent"></span>
                 Need my resume?
               </h3>
-              <p className="text-sm text-foreground/60 leading-relaxed">
-                Looking for my resume? Reach out with details about the
-                opportunity, and I&apos;ll send over a professional CV tailored
-                to your specific requirements.
+              <p className="text-sm text-foreground/80 leading-relaxed">
+                Reach out with details about the opportunity, and I&apos;ll send
+                over a professional CV tailored to your requirements.
               </p>
             </div>
           </div>

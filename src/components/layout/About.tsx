@@ -1,8 +1,10 @@
+import MatrixSphere from "@/components/models/MatrixSphere";
+
 export default function About() {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-0">
-      <div className="flex flex-col md:flex-row gap-12 items-start">
-        <div className="flex-1 space-y-8">
+      <div className="flex flex-col lg:flex-row gap-12 items-center">
+        <div className="w-full lg:flex-1 space-y-8">
           <h2
             className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
             id="about-heading"
@@ -39,36 +41,43 @@ export default function About() {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-accent/5 border border-accent/10">
-            <h3 className="text-sm font-mono text-accent uppercase tracking-widest mb-2 font-bold">
-              Education
-            </h3>
-            <p className="text-xl font-bold">B.Tech Computer Science</p>
-            <p className="text-foreground/60">
-              CVR College of Engineering, Hyderabad
-            </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="p-6 rounded-2xl bg-accent/5 border border-accent/10">
+              <h3 className="text-sm font-mono text-accent uppercase tracking-widest mb-2 font-bold">
+                Education
+              </h3>
+              <p className="text-xl font-bold">B.Tech Computer Science</p>
+              <p className="text-foreground/60">
+                CVR College of Engineering, Hyderabad
+              </p>
+            </div>
+            <div className="p-6 rounded-2xl bg-foreground/3 border border-foreground/10">
+              <h3 className="text-xs font-mono text-foreground/40 uppercase tracking-widest mb-2 font-bold">
+                Beyond Code
+              </h3>
+              <ul className="grid grid-cols-1 gap-2 text-sm text-foreground/70 font-body">
+                <li className="flex items-center gap-2">
+                  <span className="text-accent">→</span> Movie enthusiast
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-accent">→</span> Plant caretaker
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-accent">→</span> Long walks
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <aside className="w-full md:w-72 space-y-6">
-          <div className="p-6 rounded-2xl bg-foreground/3 border border-foreground/10">
-            <h3 className="text-xs font-mono text-foreground/40 uppercase tracking-widest mb-4 font-bold">
-              Beyond Code
-            </h3>
-            <ul className="space-y-3 text-sm text-foreground/70 font-body">
-              <li className="flex items-center gap-2">
-                <span className="text-accent">→</span> Movie enthusiast
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-accent">→</span> Plant caretaker
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-accent">→</span> Long walks & conversation
-              </li>
-            </ul>
-          </div>
+        <aside className="w-full max-w-sm lg:max-w-none lg:w-[400px] flex flex-col items-center justify-center lg:mt-0 mt-8">
+            <div className="w-full aspect-square relative group">
+                <MatrixSphere />
+                <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
+            </div>
         </aside>
       </div>
     </div>
   );
 }
+
