@@ -30,7 +30,7 @@ export default function Projects() {
             </Link>
           </div>
           
-          <div className="w-full lg:w-64 aspect-square relative hidden lg:block group">
+          <div className="w-full lg:w-64 aspect-square relative hidden min-[850px]:block group">
               <CyberCube />
               <div className="absolute inset-0 bg-accent/5 blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
           </div>

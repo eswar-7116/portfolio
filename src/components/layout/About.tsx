@@ -70,7 +70,7 @@ export default function About() {
           </div>
         </div>
 
-        <aside className="w-full lg:w-[400px] hidden lg:flex flex-col items-center justify-center">
+        <aside className="w-full lg:w-[400px] hidden min-[850px]:flex flex-col items-center justify-center">
           <div className="w-full aspect-square relative group">
             <MatrixSphere />
             <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>

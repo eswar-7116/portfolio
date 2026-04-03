@@ -27,7 +27,7 @@ export default function Skills() {
                 </div>
             </div>
 
-            <aside className="w-full lg:w-80 hidden lg:flex items-center justify-center">
+            <aside className="w-full lg:w-80 hidden min-[850px]:flex items-center justify-center">
                 <div className="w-full aspect-square relative group">
                     <NetworkNodes />
                     <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
