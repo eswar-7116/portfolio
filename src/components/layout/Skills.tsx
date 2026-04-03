@@ -1,5 +1,6 @@
 import { languages, libs, tools } from "@/data/skills";
 import SkillGroup from "./SkillGroup";
+import NetworkNodes from "@/components/models/NetworkNodes";
 
 export default function Skills() {
   return (
@@ -15,10 +16,23 @@ export default function Skills() {
           Skills
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full">
-          <SkillGroup title="Languages" skills={languages} />
-          <SkillGroup title="Libraries & Frameworks" skills={libs} />
-          <SkillGroup title="Tools & Platforms" skills={tools} />
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-2 gap-12 w-full">
+                <div className="space-y-12">
+                    <SkillGroup title="Languages" skills={languages} />
+                    <SkillGroup title="Tools & Platforms" skills={tools} />
+                </div>
+                <div>
+                     <SkillGroup title="Libraries & Frameworks" skills={libs} />
+                </div>
+            </div>
+
+            <aside className="w-full lg:w-80 hidden lg:flex items-center justify-center">
+                <div className="w-full aspect-square relative group">
+                    <NetworkNodes />
+                    <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
+                </div>
+            </aside>
         </div>
       </div>
     </div>

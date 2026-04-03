@@ -70,14 +70,13 @@ export default function About() {
           </div>
         </div>
 
-        <aside className="w-full max-w-sm lg:max-w-none lg:w-[400px] flex flex-col items-center justify-center lg:mt-0 mt-8">
-            <div className="w-full aspect-square relative group">
-                <MatrixSphere />
-                <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
-            </div>
+        <aside className="w-full lg:w-[400px] hidden lg:flex flex-col items-center justify-center">
+          <div className="w-full aspect-square relative group">
+            <MatrixSphere />
+            <div className="absolute inset-0 bg-accent/5 rounded-full blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
+          </div>
         </aside>
       </div>
     </div>
   );
 }
-

@@ -252,9 +252,18 @@ export default function MatrixSphere() {
       const nw = mount.clientWidth;
       const nh = mount.clientHeight;
       camera.aspect = nw / nh;
+      
+      // Dynamic camera distance to prevent clipping on thin screens
+      if (nw < 400) {
+        camera.position.z = 7 + (400 - nw) * 0.015;
+      } else {
+        camera.position.z = 7;
+      }
+      
       camera.updateProjectionMatrix();
       renderer.setSize(nw, nh);
     };
+    handleResize(); // Initial call
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -269,5 +278,5 @@ export default function MatrixSphere() {
     };
   }, []);
 
-  return <div ref={mountRef} className="w-full h-[400px]" />;
+  return <div ref={mountRef} className="w-full h-full" />;
 }
