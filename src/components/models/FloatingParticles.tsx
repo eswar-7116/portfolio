@@ -1,13 +1,25 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 export default function FloatingParticles() {
   const mountRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const mount = mountRef.current!;
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    if (mountRef.current) observer.observe(mountRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || !mountRef.current) return;
+
+    const mount = mountRef.current;
     const w = mount.clientWidth;
     const h = mount.clientHeight;
 
@@ -15,13 +27,13 @@ export default function FloatingParticles() {
     const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 100);
     camera.position.set(0, 0, 5);
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true, powerPreference: "high-performance" });
     renderer.setSize(w, h);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(0x000000, 0);
     mount.appendChild(renderer.domElement);
 
-    const COUNT = 800;
+    const COUNT = window.innerWidth < 768 ? 400 : 800;
     const positions = new Float32Array(COUNT * 3);
     const colors = new Float32Array(COUNT * 3);
     const sizes = new Float32Array(COUNT);
@@ -59,32 +71,31 @@ export default function FloatingParticles() {
     const geo = new THREE.BufferGeometry();
     geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
-    geo.setAttribute("size", new THREE.BufferAttribute(sizes, 1));
-
-    // Glowy dot texture
+    
+    // Simple dot texture
     const canvas = document.createElement("canvas");
-    canvas.width = 64;
-    canvas.height = 64;
+    canvas.width = 32;
+    canvas.height = 32;
     const ctx = canvas.getContext("2d")!;
-    const grad = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
+    const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
     grad.addColorStop(0, "rgba(0, 255, 136, 1)");
-    grad.addColorStop(0.3, "rgba(0, 255, 136, 0.4)");
+    grad.addColorStop(0.4, "rgba(0, 255, 136, 0.2)");
     grad.addColorStop(1, "rgba(0, 255, 136, 0)");
     ctx.fillStyle = grad;
     ctx.beginPath();
-    ctx.arc(32, 32, 32, 0, Math.PI * 2);
+    ctx.arc(16, 16, 16, 0, Math.PI * 2);
     ctx.fill();
-    const sprite = new THREE.CanvasTexture(canvas);
+    const particleTexture = new THREE.CanvasTexture(canvas);
 
     const mat = new THREE.PointsMaterial({
-      size: 0.06,
-      map: sprite,
+      size: 0.05,
+      map: particleTexture,
       vertexColors: true,
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
-      opacity: 0.6,
+      opacity: 0.5,
     });
 
     const points = new THREE.Points(geo, mat);
@@ -98,36 +109,25 @@ export default function FloatingParticles() {
     };
     window.addEventListener("mousemove", onMouseMove);
 
-    let t = 0;
+    let frameId: number;
     const animate = () => {
-      const id = requestAnimationFrame(animate);
-      (animate as any)._id = id;
-      t += 0.01;
+      frameId = requestAnimationFrame(animate);
 
-      points.rotation.y += 0.001;
-      points.rotation.x = THREE.MathUtils.lerp(
-        points.rotation.x,
-        mouse.y * 0.1,
-        0.02,
-      );
-      points.rotation.z = THREE.MathUtils.lerp(
-        points.rotation.z,
-        mouse.x * 0.1,
-        0.02,
-      );
+      points.rotation.y += 0.0008;
+      points.rotation.x = THREE.MathUtils.lerp(points.rotation.x, mouse.y * 0.05, 0.015);
+      points.rotation.z = THREE.MathUtils.lerp(points.rotation.z, mouse.x * 0.05, 0.015);
 
-      const posAttr = geo.attributes.position as THREE.BufferAttribute;
+      const posArr = geo.attributes.position.array as Float32Array;
       for (let i = 0; i < COUNT; i++) {
-        posAttr.array[i * 3] += velocities[i].x;
-        posAttr.array[i * 3 + 1] += velocities[i].y;
-        posAttr.array[i * 3 + 2] += velocities[i].z;
+        posArr[i * 3] += velocities[i].x;
+        posArr[i * 3 + 1] += velocities[i].y;
+        posArr[i * 3 + 2] += velocities[i].z;
 
-        // Wrap around
-        if (Math.abs(posAttr.array[i * 3]) > 10) velocities[i].x *= -1;
-        if (Math.abs(posAttr.array[i * 3 + 1]) > 10) velocities[i].y *= -1;
-        if (Math.abs(posAttr.array[i * 3 + 2]) > 10) velocities[i].z *= -1;
+        if (Math.abs(posArr[i * 3]) > 10) velocities[i].x *= -1;
+        if (Math.abs(posArr[i * 3 + 1]) > 10) velocities[i].y *= -1;
+        if (Math.abs(posArr[i * 3 + 2]) > 10) velocities[i].z *= -1;
       }
-      posAttr.needsUpdate = true;
+      geo.attributes.position.needsUpdate = true;
 
       renderer.render(scene, camera);
     };
@@ -143,13 +143,18 @@ export default function FloatingParticles() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      cancelAnimationFrame((animate as any)._id);
+      cancelAnimationFrame(frameId);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();
-      mount.removeChild(renderer.domElement);
+      geo.dispose();
+      mat.dispose();
+      particleTexture.dispose();
+      if (mount.contains(renderer.domElement)) {
+        mount.removeChild(renderer.domElement);
+      }
     };
-  }, []);
+  }, [isVisible]);
 
   return (
     <div ref={mountRef} className="absolute inset-0 -z-10 w-full h-full" />

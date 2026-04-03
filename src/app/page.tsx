@@ -1,10 +1,14 @@
-import Hero from "@/components/layout/Hero";
-import About from "@/components/layout/About";
-import AMA from "@/components/layout/AMA";
-import Contact from "@/components/layout/Contact";
-import Projects from "@/components/layout/Projects";
-import Skills from "@/components/layout/Skills";
-import Footer from "@/components/layout/Footer";
+"use client";
+
+import dynamic from 'next/dynamic';
+
+const Hero = dynamic(() => import('@/components/layout/Hero'), { ssr: false });
+const About = dynamic(() => import('@/components/layout/About'), { ssr: false });
+const AMA = dynamic(() => import('@/components/layout/AMA'), { ssr: false });
+const Contact = dynamic(() => import('@/components/layout/Contact'), { ssr: false });
+const Projects = dynamic(() => import('@/components/layout/Projects'), { ssr: false });
+const Skills = dynamic(() => import('@/components/layout/Skills'), { ssr: false });
+const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: false });
 
 export default function Home() {
   return (
