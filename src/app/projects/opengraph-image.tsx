@@ -63,7 +63,7 @@ export default function Image() {
         Container runtimes · Real-time systems · AI platforms
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
-        {["Guntainer", "Glambdar", "NexusChat", "SynapseLearn"].map((p) => (
+        {["Glambdar", "Guntainer", "NexusChat", "SynapseLearn"].map((p) => (
           <div
             key={p}
             style={{

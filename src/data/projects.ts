@@ -2,19 +2,19 @@ import { Project } from "@/types/project";
 
 const projects: Project[] = [
   {
+    title: "Glambdar",
+    skills: ["Go", "Docker", "Node.js", "Gin", "Linux", "SQLite", "GORM", "Rate Limiting", "Serverless"],
+    description:
+      "A minimal serverless runtime written in Go for executing Node.js functions. Features persistent container pooling, auto-scaling, Unix Domain Socket IPC, and per-function rate limiting. Achieves 99.6% latency reduction over per-invocation container spin-up.",
+    github: "https://github.com/eswar-7116/glambdar",
+    link: null,
+  },
+  {
     title: "Guntainer",
     skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "Alpine rootfs"],
     description:
       "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
     github: "https://github.com/eswar-7116/guntainer",
-    link: null,
-  },
-  {
-    title: "Glambdar",
-    skills: ["Go", "Docker", "Node.js", "Serverless"],
-    description:
-      "A minimal serverless runtime for Node.js functions, built in Go. Packages and executes functions in isolated Docker environments with a dead-simple deploy workflow.",
-    github: "https://github.com/eswar-7116/glambdar",
     link: null,
   },
   {
