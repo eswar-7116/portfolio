@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
+import printEasterEgg from "@/util/egg";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -72,6 +73,11 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} ${dmSans.variable} font-body antialiased selection:bg-accent selection:text-background`}
       >
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(${printEasterEgg.toString()})();`,
+          }}
+        />
         {/* Navbar */}
         <NavBar />
 
