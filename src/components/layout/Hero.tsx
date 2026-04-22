@@ -105,12 +105,12 @@ export default function Hero() {
           >
             <Mail size={18} /> Request Resume
           </Link>
-          <Link
-            href="#ama"
+          <button
+            onClick={() => document.getElementById("ama-fab")?.click()}
             className="flex items-center justify-center gap-2 border border-accent/20 bg-accent/5 backdrop-blur-sm text-accent px-8 py-3 rounded-lg font-bold hover:bg-accent/10 transition-all hover:scale-[1.02] active:scale-95 min-w-[200px] h-12"
           >
             <MessageCircleQuestion size={18} /> Ask Me Anything
-          </Link>
+          </button>
         </div>
 
         {/* Social Links */}

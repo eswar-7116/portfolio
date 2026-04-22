@@ -4,7 +4,6 @@ import dynamic from 'next/dynamic';
 
 const Hero = dynamic(() => import('@/components/layout/Hero'), { ssr: false });
 const About = dynamic(() => import('@/components/layout/About'), { ssr: false });
-const AMA = dynamic(() => import('@/components/layout/AMA'), { ssr: false });
 const Contact = dynamic(() => import('@/components/layout/Contact'), { ssr: false });
 const Projects = dynamic(() => import('@/components/layout/Projects'), { ssr: false });
 const Skills = dynamic(() => import('@/components/layout/Skills'), { ssr: false });
@@ -41,15 +40,6 @@ export default function Home() {
           aria-labelledby="projects-heading"
         >
           <Projects />
-        </section>
-
-        {/* AMA */}
-        <section
-          id="ama"
-          className="scroll-mt-24"
-          aria-label="Ask Anything about Eswar Dudi"
-        >
-          <AMA />
         </section>
 
         {/* Contact */}

@@ -3,6 +3,7 @@ import { JetBrains_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import printEasterEgg from "@/util/egg";
+import AMAWrapper from "@/components/layout/AMAWrapper";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -80,6 +81,9 @@ export default function RootLayout({
         />
         {/* Navbar */}
         <NavBar />
+
+        {/* AMA Floating Chat */}
+        <AMAWrapper />
 
         {children}
       </body>

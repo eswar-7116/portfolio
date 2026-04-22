@@ -1,17 +1,25 @@
-import { ai, getPrompt } from "@/util/ai";
+import { ai, getSystemInstruction } from "@/util/ai";
 import { GenerateContentResponse } from "@google/genai";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest): Promise<NextResponse> {
   const retryDelay = 800;
   const maxRetries = 1;
-  const { query } = await req.json();
+  const { messages } = await req.json();
+
+  const formattedContents = messages.map((msg: { role: string; content: string }) => ({
+    role: msg.role === "assistant" ? "model" : "user",
+    parts: [{ text: msg.content }],
+  }));
 
   async function getStreamGenerator(model: string) {
     try {
       return ai.models.generateContentStream({
         model,
-        contents: [{ text: getPrompt(query) }],
+        config: {
+          systemInstruction: getSystemInstruction(),
+        },
+        contents: formattedContents,
       });
     } catch (err) {
       throw err;

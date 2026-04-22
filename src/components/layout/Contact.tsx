@@ -4,7 +4,6 @@ import {
   LinkedInIcon,
   TwitterXIcon,
 } from "@/components/reusable/icons";
-import Link from "next/link";
 
 export default function Contact() {
   return (
@@ -44,9 +43,9 @@ export default function Contact() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <Link
-              href="#ama"
-              className="flex items-center justify-between p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
+            <button
+              onClick={() => document.getElementById("ama-fab")?.click()}
+              className="w-full flex items-center justify-between p-4 rounded-xl bg-foreground/3 border border-foreground/10 hover:border-accent/30 hover:bg-accent/5 transition-all group"
             >
               <div className="flex items-center gap-3 text-foreground/80 group-hover:text-accent transition-colors">
                 <MessageCircleQuestion size={20} />
@@ -56,7 +55,7 @@ export default function Contact() {
                 size={18}
                 className="text-foreground/20 group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
               />
-            </Link>
+            </button>
 
             <a
               href="mailto:eswardudi06@gmail.com"
