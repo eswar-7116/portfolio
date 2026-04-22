@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
 import printEasterEgg from "@/util/egg";
 import AMAWrapper from "@/components/layout/AMAWrapper";
+import MusicPlayerWrapper from "@/components/layout/MusicPlayerWrapper";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-jetbrains-mono",
@@ -84,6 +85,9 @@ export default function RootLayout({
 
         {/* AMA Floating Chat */}
         <AMAWrapper />
+
+        {/* Background Music Player */}
+        <MusicPlayerWrapper />
 
         {children}
       </body>

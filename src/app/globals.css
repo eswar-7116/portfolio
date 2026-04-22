@@ -328,3 +328,194 @@ h6,
 .animate-fade-in {
   animation: ama-fade-in 0.2s ease-out;
 }
+
+/* ===== Music Player Floating Button ===== */
+.music-fab {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+  color: var(--accent);
+  border: 1.5px solid rgba(0, 255, 136, 0.4);
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  animation: music-glow-pulse 3s ease-in-out infinite, music-breathe 4s ease-in-out infinite;
+  box-shadow:
+    0 0 12px rgba(0, 255, 136, 0.15),
+    0 0 24px rgba(0, 255, 136, 0.06),
+    0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.music-fab:hover {
+  transform: scale(1.12);
+  border-color: var(--accent);
+  box-shadow:
+    0 0 20px rgba(0, 255, 136, 0.45),
+    0 0 40px rgba(0, 255, 136, 0.15),
+    0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.music-fab:active {
+  transform: scale(0.93);
+}
+
+.music-fab--playing {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.08);
+  animation: music-playing-glow 1.5s ease-in-out infinite;
+}
+
+.music-fab--playing:hover {
+  background: rgba(0, 255, 136, 0.15);
+}
+
+@keyframes music-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 12px rgba(0, 255, 136, 0.12),
+      0 0 24px rgba(0, 255, 136, 0.05),
+      0 4px 16px rgba(0, 0, 0, 0.35);
+    border-color: rgba(0, 255, 136, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 20px rgba(0, 255, 136, 0.35),
+      0 0 40px rgba(0, 255, 136, 0.1),
+      0 4px 24px rgba(0, 0, 0, 0.45);
+    border-color: rgba(0, 255, 136, 0.8);
+  }
+}
+
+@keyframes music-breathe {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+@keyframes music-playing-glow {
+  0%, 100% {
+    box-shadow:
+      0 0 15px rgba(0, 255, 136, 0.3),
+      0 0 35px rgba(0, 255, 136, 0.1),
+      0 4px 20px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 255, 136, 0.7);
+  }
+  50% {
+    box-shadow:
+      0 0 25px rgba(0, 255, 136, 0.55),
+      0 0 55px rgba(0, 255, 136, 0.2),
+      0 4px 30px rgba(0, 0, 0, 0.5);
+    border-color: var(--accent);
+  }
+}
+
+/* ===== Music Icon & Waves ===== */
+.music-icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.music-icon--hidden {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+  pointer-events: none;
+}
+
+/* Sound wave bars */
+.music-waves {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  height: 20px;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.music-waves--active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.music-wave-bar {
+  display: block;
+  width: 3px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: music-wave-idle 0.5s ease-in-out infinite paused;
+}
+
+.music-waves--active .music-wave-bar {
+  animation-play-state: running;
+  animation-name: music-wave;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes music-wave {
+  0%, 100% { height: 4px; }
+  25%      { height: 18px; }
+  50%      { height: 8px; }
+  75%      { height: 14px; }
+}
+
+/* ===== Ripple Rings ===== */
+.music-ripple {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0, 255, 136, 0.35);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-ripple--1 {
+  animation: music-ripple-expand 2s ease-out infinite;
+}
+
+.music-ripple--2 {
+  animation: music-ripple-expand 2s ease-out 0.6s infinite;
+}
+
+.music-ripple--3 {
+  animation: music-ripple-expand 2s ease-out 1.2s infinite;
+}
+
+@keyframes music-ripple-expand {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .music-fab {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    width: 44px;
+    height: 44px;
+  }
+}
