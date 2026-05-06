@@ -40,7 +40,7 @@ export default function AMA() {
   });
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   // Auto-scroll to bottom on new messages
   useEffect(() => {
@@ -54,6 +54,14 @@ export default function AMA() {
     }
   }, [chat.isOpen]);
 
+  // Auto-resize textarea
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.style.height = "auto";
+      inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+    }
+  }, [chat.input]);
+
   const toggleOpen = () => {
     setChat((prev) => ({ ...prev, isOpen: !prev.isOpen }));
   };
@@ -66,8 +74,8 @@ export default function AMA() {
     setChat((prev) => ({ ...prev, input }));
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e?: React.SyntheticEvent) => {
+    if (e) e.preventDefault();
     const query = chat.input.trim();
     if (!query || chat.isLoading) return;
 
@@ -88,7 +96,12 @@ export default function AMA() {
       });
 
       if (!res.body) throw new Error("No response body.");
-      if (!res.ok) throw new Error("Bad response status!");
+      if (!res.ok) {
+        if (res.status === 503 || res.status === 429) {
+          throw new Error("QUOTA_EXCEEDED");
+        }
+        throw new Error("Bad response status!");
+      }
 
       const reader = res.body.getReader();
       const decoder = new TextDecoder("utf-8");
@@ -118,15 +131,20 @@ export default function AMA() {
           }));
         }
       }
-    } catch (err) {
+    } catch (err: any) {
       console.error("Error in AMA bot:", err);
+      const errorMessage =
+        err.message === "QUOTA_EXCEEDED"
+          ? "I'm currently taking a little break to recharge! Please try asking me again later."
+          : "Something went wrong. Please try again.";
+
       setChat((prev) => ({
         ...prev,
         messages: [
           ...prev.messages,
           {
             role: "assistant",
-            content: "Something went wrong. Please try again.",
+            content: errorMessage,
           },
         ],
       }));
@@ -249,12 +267,12 @@ export default function AMA() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
                     msg.role === "user"
-                      ? "bg-accent text-background font-mono rounded-br-md"
-                      : "bg-foreground/5 text-foreground/80 border border-foreground/5 rounded-bl-md"
+                      ? "bg-accent text-background font-mono rounded-br-md whitespace-pre-wrap selection:bg-background/20 selection:text-background"
+                      : "bg-foreground/5 text-foreground/80 border border-foreground/5 rounded-bl-md whitespace-pre-wrap"
                   }`}
                 >
                   {msg.role === "assistant" ? (
-                    <div className="prose prose-invert prose-sm max-w-none prose-p:text-foreground/80 prose-strong:text-accent prose-code:text-accent prose-code:bg-accent/10 prose-code:px-1 prose-code:rounded prose-p:my-1 prose-ul:my-1 prose-li:my-0">
+                    <div className="prose prose-invert prose-sm max-w-none prose-p:text-foreground/80 prose-strong:text-accent prose-p:my-1 prose-ul:my-1 prose-li:my-0">
                       {msg.content ? (
                         <ReactMarkdown
                           components={{
@@ -266,6 +284,23 @@ export default function AMA() {
                                 {...props}
                               />
                             ),
+                            pre: ({ ...props }) => (
+                              <div className="overflow-x-auto my-2 ama-scrollbar rounded-xl border border-foreground/10 bg-black/40 max-w-[calc(100vw-6rem)] sm:max-w-[320px]">
+                                <pre className="p-3 bg-transparent m-0 text-[11px] font-mono w-max min-w-full" {...props} />
+                              </div>
+                            ),
+                            code: ({ node, className, children, ...props }: any) => {
+                              const isInline = !className?.includes("language-");
+                              return isInline ? (
+                                <code className="text-accent bg-accent/10 px-1.5 py-0.5 rounded-md text-[11px] font-mono" {...props}>
+                                  {children}
+                                </code>
+                              ) : (
+                                <code className={`${className} font-mono text-[11px] text-foreground/90`} {...props}>
+                                  {children}
+                                </code>
+                              );
+                            },
                           }}
                         >
                           {msg.content}
@@ -301,15 +336,21 @@ export default function AMA() {
         {/* Input Area */}
         <form
           onSubmit={handleSubmit}
-          className="flex gap-2 p-4 border-t border-foreground/10"
+          className="flex gap-2 items-end p-4 border-t border-foreground/10"
         >
-          <input
+          <textarea
             ref={inputRef}
-            type="text"
             value={chat.input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder="Ask anything..."
-            className="grow h-10 px-4 rounded-xl bg-foreground/3 border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground placeholder:text-foreground/25"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && !e.shiftKey) {
+                e.preventDefault();
+                handleSubmit(e);
+              }
+            }}
+            placeholder="Ask anything... (Shift+Enter for new line)"
+            className="grow min-h-[40px] max-h-[120px] py-2.5 px-4 rounded-xl bg-foreground/3 border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground placeholder:text-foreground/25 resize-none ama-scrollbar leading-tight"
+            rows={1}
             aria-label="Ask a question"
             disabled={chat.isLoading}
           />
