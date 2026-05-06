@@ -49,10 +49,13 @@ export default function AMA() {
 
   // Focus input when modal opens
   useEffect(() => {
-    if (chat.isOpen) {
-      setTimeout(() => inputRef.current?.focus(), 100);
+    if (chat.isOpen && !chat.isLoading) {
+      const timer = setTimeout(() => {
+        inputRef.current?.focus();
+      }, 100);
+      return () => clearTimeout(timer);
     }
-  }, [chat.isOpen]);
+  }, [chat.isOpen, chat.isLoading]);
 
   // Auto-resize textarea
   useEffect(() => {
@@ -286,17 +289,32 @@ export default function AMA() {
                             ),
                             pre: ({ ...props }) => (
                               <div className="overflow-x-auto my-2 ama-scrollbar rounded-xl border border-foreground/10 bg-black/40 max-w-[calc(100vw-6rem)] sm:max-w-[320px]">
-                                <pre className="p-3 bg-transparent m-0 text-[11px] font-mono w-max min-w-full" {...props} />
+                                <pre
+                                  className="p-3 bg-transparent m-0 text-[11px] font-mono w-max min-w-full"
+                                  {...props}
+                                />
                               </div>
                             ),
-                            code: ({ node, className, children, ...props }: any) => {
-                              const isInline = !className?.includes("language-");
+                            code: ({
+                              node,
+                              className,
+                              children,
+                              ...props
+                            }: any) => {
+                              const isInline =
+                                !className?.includes("language-");
                               return isInline ? (
-                                <code className="text-accent bg-accent/10 px-1.5 py-0.5 rounded-md text-[11px] font-mono" {...props}>
+                                <code
+                                  className="text-accent bg-accent/10 px-1.5 py-0.5 rounded-md text-[11px] font-mono"
+                                  {...props}
+                                >
                                   {children}
                                 </code>
                               ) : (
-                                <code className={`${className} font-mono text-[11px] text-foreground/90`} {...props}>
+                                <code
+                                  className={`${className} font-mono text-[11px] text-foreground/90`}
+                                  {...props}
+                                >
                                   {children}
                                 </code>
                               );
