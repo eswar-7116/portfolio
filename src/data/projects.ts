@@ -3,11 +3,19 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     title: "Glambdar",
-    skills: ["Go", "Docker", "Node.js", "Gin", "Linux", "SQLite", "GORM", "Rate Limiting", "Serverless"],
+    skills: ["Go", "Docker", "Node.js", "Gin", "Linux", "SQLite", "GORM", "Rate Limiting", "Serverless", "ML", "EWMA"],
     description:
-      "A minimal serverless runtime written in Go for executing Node.js functions. Features persistent container pooling, auto-scaling, Unix Domain Socket IPC, and per-function rate limiting. Achieves 99.6% latency reduction over per-invocation container spin-up.",
+      "A fast serverless runtime written in Go for executing Node.js functions. Features persistent container pooling, auto-scaling, and Unix Domain Socket IPC. Implements ML-based optimization using adaptive EWMA to predict incoming traffic trends and pre-warm containers, eliminating cold starts and achieving a 99.6% latency reduction.",
     github: "https://github.com/eswar-7116/glambdar",
     link: null,
+  },
+  {
+    "title": "VERITAS",
+    "skills": ["Next.js", "Python", "GenAI", "Docker", "Asynchronous Programming", "Deepfake Detection", "Machine Learning", "FastAPI"],
+    "description":
+      "Winner of CMR HackFest 3.0 (GenAI Track). Engineered a 4-engine forensics pipeline utilizing Hugging Face models and noise analysis. Optimized deployment by decoupling ML dependencies into a custom base image, reducing app size by 2.8 GB, and implemented async handling for concurrent engine inference.",
+    "github": "https://github.com/eswar-7116/genai-media-verifier",
+    "link": "https://genai-media-verifier.vercel.app/"
   },
   {
     title: "Guntainer",
@@ -16,6 +24,14 @@ const projects: Project[] = [
       "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
     github: "https://github.com/eswar-7116/guntainer",
     link: null,
+  },
+  {
+    "title": "Wiki Semantic Crawler",
+    "skills": ["Python", "Sentence-Transformers", "Weighted A*", "NLP", "BeautifulSoup"],
+    "description":
+      "An autonomous AI agent that plays the 'Wiki Game' by finding the shortest path between unrelated Wikipedia topics. It implements a Weighted A* search algorithm using cosine similarity of all-MiniLM-L6-v2 embeddings as a heuristic to navigate high-dimensional semantic space efficiently.",
+    "github": "https://github.com/eswar-7116/wiki-semantic-crawler",
+    "link": null
   },
   {
     title: "NexusChat",
@@ -48,6 +64,14 @@ const projects: Project[] = [
       "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
     github: "https://github.com/eswar-7116/CalGist",
     link: "https://cal-gist.vercel.app/",
+  },
+  {
+    "title": "Flux Interpreter",
+    "skills": ["Java", "Compilers", "Lexical Analysis", "Parser", "Interpreters", "Recursive Descent Parsing"],
+    "description":
+      "A custom-built interpreted programming language called Flux. Implemented entirely in Java, featuring a hand-written lexer and parser to handle variable assignments, control flow, and basic arithmetic operations.",
+    "github": "https://github.com/eswar-7116/flux-interpreter",
+    "link": null
   },
   {
     title: "AlterTone",
@@ -89,6 +113,14 @@ const projects: Project[] = [
     github: "https://github.com/eswar-7116/termlock",
     link: null,
   },
+  {
+    "title": "TicTacToe AI Agent",
+    "skills": ["Python", "Game Theory", "Minimax", "Alpha-Beta Pruning"],
+    "description":
+      "An unbeatable Tic-Tac-Toe agent built using the Minimax algorithm. Optimized with Alpha-Beta pruning to minimize the search space, ensuring optimal moves are calculated in real-time.",
+    "github": "https://github.com/eswar-7116/tictactoe-ai",
+    "link": null
+  }
 ];
 
 export default projects;
