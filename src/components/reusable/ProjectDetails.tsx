@@ -12,11 +12,11 @@ export default function ProjectDetails({
 }: ProjectDetailsProps) {
   return (
     <div
-      className={`group relative rounded-2xl p-6 bg-foreground/2 border border-foreground/10 hover:border-accent/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5 flex flex-col ${className}`}
+      className={`group relative overflow-hidden rounded-2xl p-6 bg-foreground/2 border border-foreground/10 hover:border-accent/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl hover:shadow-accent/5 flex flex-col ${className}`}
       {...props}
     >
       {/* Accent Top Bar */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-accent/20 group-hover:bg-accent transition-colors rounded-t-2xl" />
+      <div className="absolute top-[0.6] left-0 right-0 h-1 bg-accent/20 group-hover:bg-accent transition-colors" />
 
       <div className="flex justify-between items-start mb-4">
         <h3 className="text-xl sm:text-2xl font-bold font-mono group-hover:text-accent transition-colors">
