@@ -15,7 +15,7 @@ const projects: Project[] = [
     "description":
       "Winner of CMR HackFest 3.0 (GenAI Track). Engineered a 4-engine forensics pipeline utilizing Hugging Face models and noise analysis. Optimized deployment by decoupling ML dependencies into a custom base image, reducing app size by 2.8 GB, and implemented async handling for concurrent engine inference.",
     "github": "https://github.com/eswar-7116/genai-media-verifier",
-    "link": "https://genai-media-verifier.vercel.app/"
+    "link": null
   },
   {
     title: "Guntainer",
