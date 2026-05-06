@@ -7,10 +7,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   const maxRetries = 1;
   const { messages } = await req.json();
 
-  const formattedContents = messages.map((msg: { role: string; content: string }) => ({
-    role: msg.role === "assistant" ? "model" : "user",
-    parts: [{ text: msg.content }],
-  }));
+  const formattedContents = messages.map(
+    (msg: { role: string; content: string }) => ({
+      role: msg.role === "assistant" ? "model" : "user",
+      parts: [{ text: msg.content }],
+    }),
+  );
 
   async function getStreamGenerator(model: string) {
     try {
@@ -31,12 +33,14 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
 
   while (retries <= maxRetries) {
     try {
-      streamGenerator = await getStreamGenerator("gemini-2.5-flash-lite");
+      streamGenerator = await getStreamGenerator("gemini-2.5-flash");
       break;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       if (error?.error?.code === 503 && retries < maxRetries) {
-        console.warn(`503 Service Unavailable. Retrying (${retries + 1}/${maxRetries}) after ${retryDelay}ms...`);
+        console.warn(
+          `503 Service Unavailable. Retrying (${retries + 1}/${maxRetries}) after ${retryDelay}ms...`,
+        );
         await new Promise((resolve) => setTimeout(resolve, retryDelay));
         retries++;
         continue;
@@ -44,7 +48,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
         console.error("AI stream generation failed:", error);
         return NextResponse.json(
           { error: "AI service unavailable. Please try again later." },
-          { status: 503 }
+          { status: 503 },
         );
       }
     }
