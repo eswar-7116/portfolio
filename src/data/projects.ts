@@ -3,31 +3,30 @@ import { Project } from "@/types/project";
 const projects: Project[] = [
   {
     title: "Glambdar",
-    skills: ["Go", "Docker", "Node.js", "Gin", "Linux", "SQLite", "GORM", "Rate Limiting", "Serverless", "ML", "EWMA"],
+    skills: ["Go", "Docker", "gVisor", "gRPC", "Bun", "Gin", "SQL", "GORM", "Redis", "Rate Limiting", "Serverless", "EWMA"],
     description:
-      "A fast serverless runtime written in Go for executing Node.js functions. Features persistent container pooling, auto-scaling, and Unix Domain Socket IPC. Implements ML-based optimization using adaptive EWMA to predict incoming traffic trends and pre-warm containers, eliminating cold starts and achieving a 99.6% latency reduction.",
+      "Developed a distributed FaaS platform in Go with a controller/agent architecture over gRPC, Redis cluster state, smart warm-pool-aware routing, global Redis token-bucket rate limiting, and RBAC for role-based access control. Reduced cold starts from 590 ms to 230 ms using EWMA-based predictive pre-warming (0.99 ms warm, 2,449 req/s); added gVisor sandboxing, S3-compatible storage with multipart streaming.",
     github: "https://github.com/eswar-7116/glambdar",
     link: null,
   },
   {
+    title: "Agent Gopher",
+    skills: ["Go", "Agentic AI", "MCP", "OpenAI API", "OpenRouter", "Tavily", "CLI", "HITL"],
+    description: "Engineered an extensible AI-driven automation CLI in Go with registry-based tool execution, MCP server support, and subcommand-aware shell whitelisting with denial feedback, enabling safer and more reliable agent-driven developer workflows. Built a thread-safe execution layer delivering 481 ns registry lookups, 200 ns file writes, and ~2.3 ms execution overhead, with background process tracking and automatic cleanup.",
+    github: "https://github.com/eswar-7116/agent-gopher",
+    link: null,
+  },
+  {
     "title": "VERITAS",
-    "skills": ["Next.js", "Python", "GenAI", "Docker", "Asynchronous Programming", "Deepfake Detection", "Machine Learning", "FastAPI"],
+    "skills": ["Next.js", "Python", "GenAI", "Docker", "Deepfake Detection", "Machine Learning", "FastAPI"],
     "description":
       "Winner of CMR HackFest 3.0 (GenAI Track). Engineered a 4-engine forensics pipeline utilizing Hugging Face models and noise analysis. Optimized deployment by decoupling ML dependencies into a custom base image, reducing app size by 2.8 GB, and implemented async handling for concurrent engine inference.",
     "github": "https://github.com/eswar-7116/genai-media-verifier",
     "link": null
   },
   {
-    title: "Guntainer",
-    skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "Alpine rootfs"],
-    description:
-      "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
-    github: "https://github.com/eswar-7116/guntainer",
-    link: null,
-  },
-  {
     "title": "Wiki Semantic Crawler",
-    "skills": ["Python", "Sentence-Transformers", "Weighted A*", "NLP", "BeautifulSoup"],
+    "skills": ["Python", "Sentence-Transformers", "Weighted A*", "NLP", "BeautifulSoup", "Hugging Face"],
     "description":
       "An autonomous AI agent that plays the 'Wiki Game' by finding the shortest path between unrelated Wikipedia topics. It implements a Weighted A* search algorithm using cosine similarity of all-MiniLM-L6-v2 embeddings as a heuristic to navigate high-dimensional semantic space efficiently.",
     "github": "https://github.com/eswar-7116/wiki-semantic-crawler",
@@ -50,6 +49,14 @@ const projects: Project[] = [
     link: "https://synapse-learn.netlify.app/",
   },
   {
+    title: "CalGist",
+    skills: ["Next.js", "Supabase", "Google Gemini", "Google Calendar API"],
+    description:
+      "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
+    github: "https://github.com/eswar-7116/CalGist",
+    link: "https://cal-gist.vercel.app/",
+  },
+  {
     title: "HTTP Caching Proxy",
     skills: ["Go", "Networking", "LRU Cache", "In-memory storage"],
     description:
@@ -58,12 +65,12 @@ const projects: Project[] = [
     link: null,
   },
   {
-    title: "CalGist",
-    skills: ["Next.js", "Supabase", "Google Gemini", "Google Calendar API"],
+    title: "Guntainer",
+    skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "Alpine rootfs"],
     description:
-      "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
-    github: "https://github.com/eswar-7116/CalGist",
-    link: "https://cal-gist.vercel.app/",
+      "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
+    github: "https://github.com/eswar-7116/guntainer",
+    link: null,
   },
   {
     "title": "Flux Interpreter",
