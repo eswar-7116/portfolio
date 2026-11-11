@@ -9,7 +9,7 @@ export default function Footer() {
             href="https://github.com/eswar-7116"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/40 hover:text-accent transition-colors"
+            className="text-foreground/60 hover:text-accent transition-colors"
           >
             GitHub
           </a>
@@ -17,7 +17,7 @@ export default function Footer() {
             href="https://linkedin.com/in/eswar-dudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/40 hover:text-accent transition-colors"
+            className="text-foreground/60 hover:text-accent transition-colors"
           >
             LinkedIn
           </a>
@@ -25,19 +25,19 @@ export default function Footer() {
             href="https://x.com/EswarDudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-foreground/40 hover:text-accent transition-colors"
+            className="text-foreground/60 hover:text-accent transition-colors"
           >
             X
           </a>
           <a
             href="mailto:eswardudi06@gmail.com"
-            className="text-foreground/40 hover:text-accent transition-colors"
+            className="text-foreground/60 hover:text-accent transition-colors"
           >
             Email
           </a>
         </div>
 
-        <div className="text-foreground/30 text-sm font-mono tracking-wider">
+        <div className="text-foreground/60 text-sm font-mono tracking-wider">
           © {currentYear} Eswar Dudi · Built with Next.js
         </div>
       </div>
