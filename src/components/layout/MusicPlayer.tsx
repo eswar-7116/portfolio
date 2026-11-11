@@ -7,25 +7,23 @@ export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
+  // Stop playback if the component unmounts.
   useEffect(() => {
-    const audio = new Audio("/dreams.mp3");
-    audio.loop = true;
-    audio.volume = 0.2;
-    audioRef.current = audio;
-
-    audio.addEventListener("ended", () => setIsPlaying(false));
-    audio.addEventListener("error", () => setIsPlaying(false));
-
-    return () => {
-      audio.pause();
-      audio.removeEventListener("ended", () => setIsPlaying(false));
-      audio.removeEventListener("error", () => setIsPlaying(false));
-    };
+    return () => audioRef.current?.pause();
   }, []);
 
   const togglePlay = useCallback(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
+    let audio = audioRef.current;
+
+    // Create the audio element on first click so the track is only
+    // downloaded for visitors who actually want to listen.
+    if (!audio) {
+      audio = new Audio("/dreams.mp3");
+      audio.loop = true;
+      audio.volume = 0.2;
+      audio.addEventListener("error", () => setIsPlaying(false));
+      audioRef.current = audio;
+    }
 
     if (isPlaying) {
       audio.pause();
