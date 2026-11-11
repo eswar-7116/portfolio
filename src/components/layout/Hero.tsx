@@ -8,7 +8,7 @@ import {
   TwitterXIcon,
 } from "@/components/reusable/icons";
 import { Mail, ExternalLink, MessageCircleQuestion } from "lucide-react";
-import FloatingParticles from "@/components/models/FloatingParticles";
+import { FloatingParticles } from "@/components/models/lazy";
 
 const taglines = [
   "Loves to break & fix interesting software.",
@@ -32,7 +32,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex flex-col items-center justify-center pt-20 px-4 sm:px-10 overflow-hidden"
+      className="relative min-h-[90svh] flex flex-col items-center justify-center pt-28 pb-12 px-4 sm:px-10 overflow-hidden"
       aria-label="Hero Section"
     >
       {/* Background 3D Particles */}
@@ -71,7 +71,7 @@ export default function Hero() {
 
             {/* Tagline Animation */}
             <div className="h-12 sm:h-20 mb-6 flex items-center">
-              <div className="typing-container text-sm xs:text-base sm:text-2xl md:text-4xl font-mono text-foreground/80">
+              <div className="typing-container text-base sm:text-2xl md:text-4xl font-mono text-foreground/80">
                 <div className="flex flex-col">
                   <span
                     key={currentIndex}
@@ -119,8 +119,7 @@ export default function Hero() {
             href="https://github.com/eswar-7116"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
-            aria-label="GitHub"
+            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
           >
             <GitHubIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">eswar-7116</span>
@@ -129,8 +128,7 @@ export default function Hero() {
             href="https://linkedin.com/in/eswar-dudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
-            aria-label="LinkedIn"
+            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
           >
             <LinkedInIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">eswar-dudi</span>
@@ -139,16 +137,14 @@ export default function Hero() {
             href="https://x.com/EswarDudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
-            aria-label="X (Twitter)"
+            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
           >
             <TwitterXIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">EswarDudi</span>
           </a>
           <a
             href="mailto:eswardudi06@gmail.com"
-            className="flex items-center gap-2 text-foreground/40 hover:text-accent transition-all group"
-            aria-label="Email"
+            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
           >
             <Mail
               size={20}

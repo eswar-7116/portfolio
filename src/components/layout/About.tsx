@@ -1,4 +1,4 @@
-import MatrixSphere from "@/components/models/MatrixSphere";
+import { MatrixSphere } from "@/components/models/lazy";
 
 export default function About() {
   return (
@@ -24,7 +24,7 @@ export default function About() {
               building robust backend systems and exploring the depths of
               systems programming. My work ranges from crafting high-performance
               container runtimes in{" "}
-              <span className="text-accent font-mono text-sm">Go</span> to
+              <span className="text-accent font-mono">Go</span> to
               architecting real-time communication platforms.
             </p>
             <p>
@@ -52,10 +52,10 @@ export default function About() {
               </p>
             </div>
             <div className="p-6 rounded-2xl bg-foreground/3 border border-foreground/10">
-              <h3 className="text-xs font-mono text-foreground/40 uppercase tracking-widest mb-2 font-bold">
+              <h3 className="text-sm font-mono text-accent uppercase tracking-widest mb-2 font-bold">
                 Beyond Code
               </h3>
-              <ul className="grid grid-cols-1 gap-2 text-sm text-foreground/70 font-body">
+              <ul className="grid grid-cols-1 gap-2 text-foreground/70 font-body">
                 <li className="flex items-center gap-2">
                   <span className="text-accent">→</span> Movie enthusiast
                 </li>

@@ -1,7 +1,7 @@
 import ProjectDetails from "@/components/reusable/ProjectDetails";
 import projects from "@/data/projects";
 import Link from "next/link";
-import CyberCube from "@/components/models/CyberCube";
+import { CyberCube } from "@/components/models/lazy";
 
 export default function Projects() {
   return (

@@ -1,13 +1,9 @@
-"use client";
-
-import dynamic from 'next/dynamic';
-
-const Hero = dynamic(() => import('@/components/layout/Hero'), { ssr: false });
-const About = dynamic(() => import('@/components/layout/About'), { ssr: false });
-const Contact = dynamic(() => import('@/components/layout/Contact'), { ssr: false });
-const Projects = dynamic(() => import('@/components/layout/Projects'), { ssr: false });
-const Skills = dynamic(() => import('@/components/layout/Skills'), { ssr: false });
-const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: false });
+import Hero from "@/components/layout/Hero";
+import About from "@/components/layout/About";
+import Skills from "@/components/layout/Skills";
+import Projects from "@/components/layout/Projects";
+import Contact from "@/components/layout/Contact";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -18,7 +14,7 @@ export default function Home() {
         {/* About */}
         <section
           id="about"
-          className="scroll-mt-24"
+          className="scroll-mt-32"
           aria-labelledby="about-heading"
         >
           <About />
@@ -27,8 +23,8 @@ export default function Home() {
         {/* Skills */}
         <section
           id="skills"
-          className="scroll-mt-24"
-          aria-label="Professional Skills"
+          className="scroll-mt-32"
+          aria-labelledby="skills-heading"
         >
           <Skills />
         </section>
@@ -36,14 +32,18 @@ export default function Home() {
         {/* Projects */}
         <section
           id="projects"
-          className="scroll-mt-24"
+          className="scroll-mt-32"
           aria-labelledby="projects-heading"
         >
           <Projects />
         </section>
 
         {/* Contact */}
-        <section id="contact" className="scroll-mt-24" aria-label="Contact Me">
+        <section
+          id="contact"
+          className="scroll-mt-32"
+          aria-labelledby="contact-heading"
+        >
           <Contact />
         </section>
       </div>
