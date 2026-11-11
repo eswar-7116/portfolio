@@ -40,11 +40,6 @@ export default function HamburgerToggle({ navLinks }: HamburgerToggleProps) {
               {label}
             </Link>
           ))}
-          <div className="mt-2 pt-2 border-t border-accent/10 flex justify-center gap-6">
-            <span className="text-[10px] font-mono text-accent uppercase tracking-widest opacity-50">
-              Available for opportunities
-            </span>
-          </div>
         </div>
       )}
     </div>
