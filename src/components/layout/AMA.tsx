@@ -24,6 +24,11 @@ interface ChatState {
   input: string;
 }
 
+// Must stay within the limits enforced by /api/ask.
+const MAX_MESSAGE_CHARS = 2000;
+// Odd so the trimmed history still starts with a user turn.
+const MAX_HISTORY_MESSAGES = 19;
+
 const SUGGESTED_QUERIES = [
   "Tell me about your top projects",
   "What is NexusChat?",
@@ -95,7 +100,11 @@ export default function AMA() {
       const res = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [...chat.messages, userMessage] }),
+        body: JSON.stringify({
+          messages: [...chat.messages, userMessage].slice(
+            -MAX_HISTORY_MESSAGES,
+          ),
+        }),
       });
 
       if (!res.body) throw new Error("No response body.");
@@ -167,7 +176,9 @@ export default function AMA() {
       <button
         onClick={toggleOpen}
         className="ama-fab peer"
-        aria-label="Open AI Chat"
+        aria-label={chat.isOpen ? "Close AI chat" : "Open AI chat"}
+        aria-expanded={chat.isOpen}
+        aria-controls="ama-modal"
         id="ama-fab"
       >
         <Bot size={26} strokeWidth={2.2} />
@@ -197,6 +208,8 @@ export default function AMA() {
         className={`ama-modal ${chat.isOpen ? "ama-modal--open" : ""} ${chat.isExpanded ? "ama-modal--expanded" : ""}`}
         role="dialog"
         aria-label="Ask Me Anything Chat"
+        aria-hidden={!chat.isOpen}
+        inert={!chat.isOpen}
         id="ama-modal"
       >
         {/* Header */}
@@ -369,6 +382,7 @@ export default function AMA() {
             placeholder="Ask anything... (Shift+Enter for new line)"
             className="grow min-h-[40px] max-h-[120px] py-2.5 px-4 rounded-xl bg-foreground/3 border border-foreground/10 focus:border-accent/30 outline-none font-mono text-sm transition-all text-foreground placeholder:text-foreground/25 resize-none ama-scrollbar leading-tight"
             rows={1}
+            maxLength={MAX_MESSAGE_CHARS}
             aria-label="Ask a question"
             disabled={chat.isLoading}
           />
@@ -376,6 +390,7 @@ export default function AMA() {
             type="submit"
             className="h-10 w-10 rounded-xl bg-accent text-background flex items-center justify-center hover:bg-accent/90 transition-all hover:scale-105 active:scale-95 disabled:opacity-50 shrink-0"
             disabled={chat.isLoading || !chat.input.trim()}
+            aria-label={chat.isLoading ? "Sending" : "Send message"}
           >
             {chat.isLoading ? (
               <Loader className="animate-spin" size={16} />
