@@ -36,7 +36,6 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: myName }],
   creator: myName,
-  icons: "/favicon.ico",
   metadataBase: new URL(url),
   openGraph: {
     title,
