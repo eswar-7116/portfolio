@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: "Agent Gopher",
     skills: ["Go", "Agentic AI", "MCP", "Bubble Tea", "OpenAI API", "Tavily", "Concurrency", "TUI", "HITL"],
     description:
-      "Built a terminal AI coding agent in Go that streams responses from any OpenAI-compatible API and runs file, shell, web-search and MCP tools under a diff-preview permission system with subcommand-aware whitelisting that never auto-approves chained or piped commands. Added sub-agent delegation, a read-only plan mode, skills, persistent memory, crash-safe JSONL sessions, and automatic context compaction after benchmarks showed history re-marshalling cost growing linearly with conversation length. Race-detector clean across Linux, macOS and Windows CI; ~0.5 µs tool registry setup and ~1.3 ms diffs over 5,000-line files.",
+      "Built a terminal AI coding agent in Go for any OpenAI-compatible API, running file, shell, web-search and MCP tools behind a diff-preview permission system with subcommand-aware whitelisting. Added sub-agent delegation, plan mode, persistent memory and automatic context compaction. Race-detector clean on Linux, macOS and Windows CI, with ~0.5 µs tool registry setup and ~1.3 ms diffs over 5,000-line files.",
     github: "https://github.com/eswar-7116/agent-gopher",
     link: null,
   },
@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "StreamGuard",
     skills: ["Java", "Spring Boot", "Concurrency", "Anomaly Detection", "EWMA", "Observability", "JMH", "Maven Central"],
     description:
-      "Published a Spring Boot starter on Maven Central that adds real-time traffic monitoring, anomaly detection and threat signals to an app as a single dependency. A lock-free sliding-window aggregator built from LongAdder counters and mergeable latency histograms sustains 30.8M events/s across 15 writer threads with 0% sample loss, and keeps 5-minute queries near-constant (0.3 µs at 2M events vs 319 ms for a raw rescan). Detects error, latency and traffic spikes, forecasts traffic with an adaptive EWMA, tracks route availability, flags DDoS, brute-force and scanner patterns, and serves a live dashboard with webhook alerts.",
+      "Published a Spring Boot starter on Maven Central that adds real-time traffic monitoring, anomaly detection, EWMA traffic forecasting and DDoS/brute-force signals to an app as a single dependency. Its lock-free sliding-window aggregator sustains 30.8M events/s with 0% sample loss and answers 5-minute queries in 0.3 µs at 2M events (vs 319 ms for a raw rescan).",
     github: "https://github.com/eswar-7116/streamguard",
     link: "https://central.sonatype.com/artifact/io.github.eswar-7116/streamguard-spring-boot-starter",
   },
