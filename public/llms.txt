@@ -6,14 +6,18 @@
 - [Home](https://eswardudi.vercel.app/)
 - [Projects List](https://eswardudi.vercel.app/projects)
 
-For a `llms.txt` file, you want high-density technical information that highlights your systems engineering, optimization skills, and competitive wins.
+## Top Projects
+* **[Glambdar](https://github.com/eswar-7116/glambdar)** – Distributed serverless (FaaS) platform in Go for Bun functions. Controller/agent architecture over gRPC with Redis cluster state, warm-pool-aware routing, a global Redis token-bucket rate limiter, RBAC, gVisor sandboxing and S3-compatible storage. EWMA-based predictive pre-warming cut cold starts from 590 ms to 230 ms (0.99 ms warm, 2,449 req/s).
+* **[Agent Gopher](https://github.com/eswar-7116/agent-gopher)** – Terminal AI coding agent in Go (Bubble Tea TUI) for any OpenAI-compatible API. Runs file, shell, web-search and MCP tools behind a diff-preview permission system with subcommand-aware whitelisting; supports sub-agent delegation, plan mode, skills, persistent memory, JSONL sessions and automatic context compaction. Race-detector clean with CI on Linux, macOS and Windows.
+* **[StreamGuard](https://github.com/eswar-7116/streamguard)** – Spring Boot starter published on [Maven Central](https://central.sonatype.com/artifact/io.github.eswar-7116/streamguard-spring-boot-starter) that adds real-time traffic monitoring, anomaly detection, EWMA traffic forecasting, availability tracking and DDoS/brute-force/scanner signals as a single dependency. Its lock-free sliding-window aggregator sustains 30.8M events/s with 0% sample loss and answers 5-minute queries in 0.3 µs at 2M events.
+* **[NexusChat](https://github.com/eswar-7116/NexusChat)** – Full-stack real-time chat (MERN, Socket.io) with JWT auth, presence, message status and Cloudinary media, deployed with Docker. [Live](https://nexuschat-aglp.onrender.com/)
+* **[GDG on Campus CVR Website](https://github.com/gdgcvr/gdgcvrwebsite)** – Lead contributor to the club's official site. Migrated it to Next.js, built a Notion-backed blog, synced events from Google Calendar, and improved performance, accessibility and SEO. [Live](https://gdg.cvr.ac.in)
+* **[VERITAS](https://github.com/eswar-7116/genai-media-verifier)** – Winner of CMR HackFest 3.0 (GenAI Track). Moved ML dependencies into a custom Docker base image, reducing app size by 2.8 GB. Designed the architecture of a 4-engine GenAI forensics pipeline (Hugging Face models, noise analysis) for deepfake detection in images and videos, implemented with the teammates.
+* **[Guntainer](https://github.com/eswar-7116/guntainer)** – Unprivileged Linux container runtime built from scratch in Go using PID, mount, UTS, IPC and user namespaces, UID/GID remapping, chroot and a self re-exec bootstrap.
+* **[Flux Interpreter](https://github.com/eswar-7116/flux-interpreter)** – Tree-walking interpreted language in Java with a hand-written lexer, recursive descent parser, AST optimizer (constant folding/propagation, algebraic simplification) and REPL. The optimizer shrinks the AST by 67% on a 10,000-line benchmark.
+* **[Wiki Semantic Crawler](https://github.com/eswar-7116/wiki-semantic-crawler)** – Autonomous agent for the "Wiki Game" using Weighted A* search, with `all-MiniLM-L6-v2` sentence embeddings and cosine similarity as the heuristic.
 
-### Top Projects
-* **[VERITAS](https://github.com/eswar-7116/genai-media-verifier)** – Winner of CMR HackFest 3.0. A 4-engine GenAI forensics pipeline (Hugging Face, metadata, noise analysis) for deepfake detection. Optimized deployment via ML-dependency base-image extraction, reducing image size by 2.8 GB.
-* **[Glambdar](https://github.com/eswar-7116/glambdar)** – High-performance serverless runtime in Go for Node.js functions. Implements adaptive EWMA for traffic prediction and proactive container pre-warming, achieving a 99.6% reduction in cold-start latency.
-* **[Wiki Semantic Crawler](https://github.com/eswar-7116/wiki-semantic-crawler)** – Autonomous agent for the "Wiki Game" utilizing Weighted A* search. Uses `all-MiniLM-L6-v2` sentence transformer embeddings and cosine similarity as a heuristic for semantic pathfinding.
-* **[Guntainer](https://github.com/eswar-7116/guntainer)** – Linux container runtime built from scratch in Go. Implements process isolation via namespaces, UID/GID remapping, and automated Alpine rootfs orchestration to demonstrate low-level OS mastery.
-* **[Flux Interpreter](https://github.com/eswar-7116/flux-interpreter)** – Custom interpreted programming language engineered in Java. Features a hand-written lexer and recursive descent parser supporting variable environments, control flow, and arithmetic expressions.
+The full list is on the [Projects page](https://eswardudi.vercel.app/projects).
 
 ## Skills
 - **Languages**: Go, Python, TypeScript, Java, JavaScript, C, Kotlin

@@ -11,17 +11,58 @@ const projects: Project[] = [
   },
   {
     title: "Agent Gopher",
-    skills: ["Go", "Agentic AI", "MCP", "OpenAI API", "OpenRouter", "Tavily", "CLI", "HITL"],
-    description: "Engineered an extensible AI-driven automation CLI in Go with registry-based tool execution, MCP server support, and subcommand-aware shell whitelisting with denial feedback, enabling safer and more reliable agent-driven developer workflows. Built a thread-safe execution layer delivering 481 ns registry lookups, 200 ns file writes, and ~2.3 ms execution overhead, with background process tracking and automatic cleanup.",
+    skills: ["Go", "Agentic AI", "MCP", "Bubble Tea", "OpenAI API", "Tavily", "Concurrency", "TUI", "HITL"],
+    description:
+      "Built a terminal AI coding agent in Go that streams responses from any OpenAI-compatible API and runs file, shell, web-search and MCP tools under a diff-preview permission system with subcommand-aware whitelisting that never auto-approves chained or piped commands. Added sub-agent delegation, a read-only plan mode, skills, persistent memory, crash-safe JSONL sessions, and automatic context compaction after benchmarks showed history re-marshalling cost growing linearly with conversation length. Race-detector clean across Linux, macOS and Windows CI; ~0.5 µs tool registry setup and ~1.3 ms diffs over 5,000-line files.",
     github: "https://github.com/eswar-7116/agent-gopher",
     link: null,
+  },
+  {
+    title: "StreamGuard",
+    skills: ["Java", "Spring Boot", "Concurrency", "Anomaly Detection", "EWMA", "Observability", "JMH", "Maven Central"],
+    description:
+      "Published a Spring Boot starter on Maven Central that adds real-time traffic monitoring, anomaly detection and threat signals to an app as a single dependency. A lock-free sliding-window aggregator built from LongAdder counters and mergeable latency histograms sustains 30.8M events/s across 15 writer threads with 0% sample loss, and keeps 5-minute queries near-constant (0.3 µs at 2M events vs 319 ms for a raw rescan). Detects error, latency and traffic spikes, forecasts traffic with an adaptive EWMA, tracks route availability, flags DDoS, brute-force and scanner patterns, and serves a live dashboard with webhook alerts.",
+    github: "https://github.com/eswar-7116/streamguard",
+    link: "https://central.sonatype.com/artifact/io.github.eswar-7116/streamguard-spring-boot-starter",
+  },
+  {
+    title: "NexusChat",
+    skills: ["MERN Stack", "Socket.io", "JWT Auth", "Docker", "Cloudinary"],
+    description:
+      "Full-stack real-time chat with P2P messaging, JWT auth, WebSocket presence, and message status; deployed via Docker on a MERN stack with Cloudinary media support.",
+    github: "https://github.com/eswar-7116/NexusChat",
+    link: "https://nexuschat-aglp.onrender.com/",
+  },
+  {
+    title: "GDG on Campus CVR Website",
+    skills: ["Next.js", "TypeScript", "Notion API", "Google Calendar API", "TanStack Query", "Tailwind CSS", "SEO"],
+    description:
+      "Lead contributor (98 commits) to the official website of GDG on Campus CVR College of Engineering. Migrated it to Next.js, built a blog backed by Notion as a CMS with Markdown rendering and syntax highlighting, synced events from Google Calendar with event state computed from dates, and improved first contentful paint, accessibility, SEO metadata and analytics.",
+    github: "https://github.com/gdgcvr/gdgcvrwebsite",
+    link: "https://gdg.cvr.ac.in",
   },
   {
     "title": "VERITAS",
     "skills": ["Next.js", "Python", "GenAI", "Docker", "Deepfake Detection", "Machine Learning", "FastAPI"],
     "description":
-      "Winner of CMR HackFest 3.0 (GenAI Track). Engineered a 4-engine forensics pipeline utilizing Hugging Face models and noise analysis. Optimized deployment by decoupling ML dependencies into a custom base image, reducing app size by 2.8 GB, and implemented async handling for concurrent engine inference.",
+      "Winner of CMR HackFest 3.0 (GenAI Track). Decoupled ML dependencies into a custom Docker base image, reducing app size by 2.8 GB, and migrated the backend to uv. Designed the architecture of a 4-engine deepfake forensics pipeline combining Hugging Face models and noise analysis, implemented with the teammates.",
     "github": "https://github.com/eswar-7116/genai-media-verifier",
+    "link": null
+  },
+  {
+    title: "Guntainer",
+    skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "chroot", "Containers"],
+    description:
+      "A minimal, unprivileged container runtime in Go that isolates processes with PID, mount, UTS, IPC and user namespaces, maps container root to the invoking host user, and bootstraps itself with a self re-exec model like real runtimes, all without Docker.",
+    github: "https://github.com/eswar-7116/guntainer",
+    link: null,
+  },
+  {
+    "title": "Flux Interpreter",
+    "skills": ["Java", "Compilers", "Lexical Analysis", "Recursive Descent Parsing", "AST Optimization", "Interpreters"],
+    "description":
+      "A tree-walking interpreted language in Java with a hand-written lexer, recursive descent parser, AST optimizer (constant folding/propagation and algebraic simplification), and a REPL. On a 10,000-line stress test the optimizer shrinks the AST by 67% (115,982 to 37,996 nodes), with parsing in ~24 ms and execution in ~7 ms.",
+    "github": "https://github.com/eswar-7116/flux-interpreter",
     "link": null
   },
   {
@@ -33,28 +74,12 @@ const projects: Project[] = [
     "link": null
   },
   {
-    title: "NexusChat",
-    skills: ["MERN Stack", "Socket.io", "JWT Auth", "Docker", "Cloudinary"],
-    description:
-      "Full-stack real-time chat with P2P messaging, JWT auth, WebSocket presence, and message status; deployed via Docker on a MERN stack with Cloudinary media support.",
-    github: "https://github.com/eswar-7116/NexusChat",
-    link: "https://nexuschat-aglp.onrender.com/",
-  },
-  {
     title: "SynapseLearn",
     skills: ["Next.js", "Google Gemini", "Clerk", "Neon DB", "Drizzle ORM"],
     description:
       "AI-powered study platform using Google Gemini for personalized task generation, with analytics, task tracking, and a full auth + DB stack (Clerk + Neon + Drizzle ORM).",
     github: "https://github.com/eswar-7116/SynapseLearn",
     link: "https://synapse-learn.netlify.app/",
-  },
-  {
-    title: "CalGist",
-    skills: ["Next.js", "Supabase", "Google Gemini", "Google Calendar API"],
-    description:
-      "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
-    github: "https://github.com/eswar-7116/CalGist",
-    link: "https://cal-gist.vercel.app/",
   },
   {
     title: "HTTP Caching Proxy",
@@ -65,19 +90,27 @@ const projects: Project[] = [
     link: null,
   },
   {
-    title: "Guntainer",
-    skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "Alpine rootfs"],
+    title: "CalGist",
+    skills: ["Next.js", "Supabase", "Google Gemini", "Google Calendar API"],
     description:
-      "A lightweight container runtime in Go that isolates processes using Linux namespaces, UID/GID remapping, and automatic Alpine rootfs setup. Demonstrates deep systems-level understanding of OS primitives.",
-    github: "https://github.com/eswar-7116/guntainer",
+      "A Google Calendar event summarizer that uses AI to generate concise insights and manages event data with PostgreSQL and Supabase.",
+    github: "https://github.com/eswar-7116/CalGist",
+    link: "https://cal-gist.vercel.app/",
+  },
+  {
+    title: "Tgo",
+    skills: ["Go", "Cobra", "SQLite3", "CLI"],
+    description:
+      "A simple command-line task manager implemented in Go. It uses SQLite for persistent storage and provides a clean CLI interface using Cobra.",
+    github: "https://github.com/eswar-7116/tgo",
     link: null,
   },
   {
-    "title": "Flux Interpreter",
-    "skills": ["Java", "Compilers", "Lexical Analysis", "Parser", "Interpreters", "Recursive Descent Parsing"],
+    "title": "TicTacToe AI Agent",
+    "skills": ["TypeScript", "Game Theory", "Minimax", "Alpha-Beta Pruning"],
     "description":
-      "A custom-built interpreted programming language called Flux. Implemented entirely in Java, featuring a hand-written lexer and parser to handle variable assignments, control flow, and basic arithmetic operations.",
-    "github": "https://github.com/eswar-7116/flux-interpreter",
+      "An unbeatable Tic-Tac-Toe agent built using the Minimax algorithm. Optimized with Alpha-Beta pruning and depth-aware evaluation to minimize the search space, ensuring optimal moves are calculated in real-time.",
+    "github": "https://github.com/eswar-7116/tictactoe-ai",
     "link": null
   },
   {
@@ -87,14 +120,6 @@ const projects: Project[] = [
       "A web app that uses AI to change the tone of your text, for example turning sad sentences into happy or professional ones, optimized for strong SEO visibility.",
     github: "https://github.com/eswar-7116/altertone",
     link: "https://altertone-two.vercel.app/",
-  },
-  {
-    title: "Tgo",
-    skills: ["Go", "Cobra", "SQLite3", "CLI"],
-    description:
-      "A simple command-line task manager implemented in Go. It uses SQLite for persistent storage and provides a clean CLI interface using Cobra.",
-    github: "https://github.com/eswar-7116/tgo",
-    link: null,
   },
   {
     title: "HTTP Server in C",
@@ -119,14 +144,6 @@ const projects: Project[] = [
       "A lightweight shell script that password-protects terminal startup, blocking escape attempts and ensuring secure access with zero dependencies.",
     github: "https://github.com/eswar-7116/termlock",
     link: null,
-  },
-  {
-    "title": "TicTacToe AI Agent",
-    "skills": ["Python", "Game Theory", "Minimax", "Alpha-Beta Pruning"],
-    "description":
-      "An unbeatable Tic-Tac-Toe agent built using the Minimax algorithm. Optimized with Alpha-Beta pruning to minimize the search space, ensuring optimal moves are calculated in real-time.",
-    "github": "https://github.com/eswar-7116/tictactoe-ai",
-    "link": null
   }
 ];
 
