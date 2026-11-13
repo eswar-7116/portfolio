@@ -23,7 +23,7 @@ DevOps: Docker, Git, Linux.
 Favorite OS: Linux.
 
 Movies: Action/Thriller, Sci-Fi, Action/Adventure. Big Marvel fan.
-Hobbies: Plant dad, long walks, tinkering with automation scripts.
+Hobbies: Plant dad, long walks, tinkering with automation scripts, making small games for fun (a few are published at https://esward.itch.io: MazeBound, Just Live!, Collect The Coins; just a sample, not everything I have made).
 
 Projects (ordered by prominence): ${proj}.
 NexusChat is my most favorite — my first full-stack app, lots of learning and mistakes.

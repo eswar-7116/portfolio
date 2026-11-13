@@ -65,6 +65,21 @@ export default function About() {
                 <li className="flex items-center gap-2">
                   <span className="text-accent">→</span> Long walks
                 </li>
+                <li className="flex items-center gap-2">
+                  <span className="text-accent">→</span>
+                  <span>
+                    Making games for fun (
+                    <a
+                      href="https://esward.itch.io"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-accent hover:underline underline-offset-4"
+                    >
+                      itch.io
+                    </a>
+                    )
+                  </span>
+                </li>
               </ul>
             </div>
           </div>
