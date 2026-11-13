@@ -5,9 +5,67 @@ import Projects from "@/components/layout/Projects";
 import Contact from "@/components/layout/Contact";
 import Footer from "@/components/layout/Footer";
 
+const siteUrl = "https://eswardudi.vercel.app";
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": `${siteUrl}/#person`,
+  name: "Eswar Dudi",
+  url: siteUrl,
+  email: "eswardudi06@gmail.com",
+  jobTitle: "Software Developer",
+  description:
+    "Software developer specializing in full stack development, backend systems, and AI integrations.",
+
+  affiliation: {
+    "@type": "CollegeOrUniversity",
+    name: "CVR College of Engineering",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Hyderabad",
+      addressCountry: "IN",
+    },
+  },
+  
+  // alumniOf: {
+  //   "@type": "CollegeOrUniversity",
+  //   name: "CVR College of Engineering",
+  //   address: {
+  //     "@type": "PostalAddress",
+  //     addressLocality: "Hyderabad",
+  //     addressCountry: "IN",
+  //   },
+  // },
+
+  knowsAbout: [
+    "Software Engineering",
+    "Full Stack Development",
+    "Backend Systems",
+    "Systems Programming",
+    "Go",
+    "AI Integrations",
+    "Machine Learning",
+    "Prompt Engineering",
+    "Linux",
+    "Distributed Systems",
+  ],
+  sameAs: [
+    "https://github.com/eswar-7116",
+    "https://linkedin.com/in/eswar-dudi",
+    "https://x.com/EswarDudi",
+  ],
+};
+
 export default function Home() {
   return (
     <main className="w-full h-full" role="main">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
       <Hero />
 
       <div className="px-4 sm:px-20 space-y-32 mb-20">
