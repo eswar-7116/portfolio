@@ -8,8 +8,32 @@ import {
   Maximize2,
   Minimize2,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { Children, useEffect, useRef, useState, type ReactNode } from "react";
 import ReactMarkdown from "react-markdown";
+import Linkify from "linkify-react";
+
+const linkifyOptions = (className: string) => ({
+  target: "_blank",
+  rel: "noopener noreferrer",
+  className,
+});
+
+const assistantLinkOptions = linkifyOptions(
+  "text-accent underline decoration-accent/30 hover:decoration-accent transition-all",
+);
+const userLinkOptions = linkifyOptions(
+  "underline decoration-background/40 hover:decoration-background",
+);
+
+// Linkify only raw text nodes so existing markdown links/code are left alone.
+const linkifyText = (children: ReactNode) =>
+  Children.map(children, (child) =>
+    typeof child === "string" ? (
+      <Linkify options={assistantLinkOptions}>{child}</Linkify>
+    ) : (
+      child
+    ),
+  );
 
 interface ChatMessage {
   role: "user" | "assistant";
@@ -250,7 +274,7 @@ export default function AMA() {
         </div>
 
         {/* Messages Area */}
-        <div className="flex-1 overflow-y-auto p-5 space-y-4 ama-scrollbar">
+        <div className="flex-1 overflow-y-auto overflow-x-hidden p-5 space-y-4 ama-scrollbar">
           {chat.messages.length === 0 ? (
             <div className="flex flex-col items-center justify-center h-full gap-6 py-8">
               <div className="w-16 h-16 rounded-2xl bg-accent/5 border border-accent/10 flex items-center justify-center">
@@ -281,7 +305,7 @@ export default function AMA() {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${msg.role === "user"
+                  className={`max-w-[85%] min-w-0 break-words [overflow-wrap:anywhere] rounded-2xl px-4 py-3 text-sm ${msg.role === "user"
                     ? "bg-accent text-background font-mono rounded-br-md whitespace-pre-wrap selection:bg-background/20 selection:text-background"
                     : "bg-foreground/5 text-foreground/80 border border-foreground/5 rounded-bl-md whitespace-pre-wrap"
                     }`}
@@ -299,6 +323,22 @@ export default function AMA() {
                                 {...props}
                               />
                             ),
+                            p: ({ node, children, ...props }) => {
+                              void node;
+                              return <p {...props}>{linkifyText(children)}</p>;
+                            },
+                            li: ({ node, children, ...props }) => {
+                              void node;
+                              return <li {...props}>{linkifyText(children)}</li>;
+                            },
+                            strong: ({ node, children, ...props }) => {
+                              void node;
+                              return <strong {...props}>{linkifyText(children)}</strong>;
+                            },
+                            em: ({ node, children, ...props }) => {
+                              void node;
+                              return <em {...props}>{linkifyText(children)}</em>;
+                            },
                             pre: ({ ...props }) => (
                               <div className="overflow-x-auto my-2 ama-scrollbar rounded-xl border border-foreground/10 bg-black/40 max-w-[calc(100vw-6rem)] sm:max-w-[320px]">
                                 <pre
@@ -344,7 +384,7 @@ export default function AMA() {
                       )}
                     </div>
                   ) : (
-                    msg.content
+                    <Linkify options={userLinkOptions}>{msg.content}</Linkify>
                   )}
                 </div>
               </div>
