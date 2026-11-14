@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
+import { ACCENT_HEX } from "@/data/theme";
 
 export default function ProjectVoxels() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -23,7 +24,7 @@ export default function ProjectVoxels() {
     const group = new THREE.Group();
     scene.add(group);
 
-    const ACCENT = 0x00ff88;
+    const ACCENT = ACCENT_HEX;
     const VOXEL_COUNT = 60;
     const voxels: THREE.Mesh[] = [];
     const positions: THREE.Vector3[] = [];

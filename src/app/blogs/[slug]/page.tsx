@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
 
           <header className="mt-8 mb-12 space-y-5">
-            <h1 className="text-3xl sm:text-5xl font-mono font-bold tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
               {blog.title}
             </h1>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-foreground/50">

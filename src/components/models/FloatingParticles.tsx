@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { ACCENT_HEX, ACCENT_DIM_HEX, ACCENT_RGB } from "@/data/theme";
 
 export default function FloatingParticles() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -39,8 +40,8 @@ export default function FloatingParticles() {
     const sizes = new Float32Array(COUNT);
     const velocities: THREE.Vector3[] = [];
 
-    const greenColor = new THREE.Color(0x00ff88);
-    const secondaryColor = new THREE.Color(0x004422);
+    const greenColor = new THREE.Color(ACCENT_HEX);
+    const secondaryColor = new THREE.Color(ACCENT_DIM_HEX);
 
     for (let i = 0; i < COUNT; i++) {
       const x = (Math.random() - 0.5) * 15;
@@ -78,9 +79,9 @@ export default function FloatingParticles() {
     canvas.height = 32;
     const ctx = canvas.getContext("2d")!;
     const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    grad.addColorStop(0, "rgba(0, 255, 136, 1)");
-    grad.addColorStop(0.4, "rgba(0, 255, 136, 0.2)");
-    grad.addColorStop(1, "rgba(0, 255, 136, 0)");
+    grad.addColorStop(0, `rgba(${ACCENT_RGB}, 1)`);
+    grad.addColorStop(0.4, `rgba(${ACCENT_RGB}, 0.2)`);
+    grad.addColorStop(1, `rgba(${ACCENT_RGB}, 0)`);
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.arc(16, 16, 16, 0, Math.PI * 2);

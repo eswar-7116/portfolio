@@ -8,7 +8,7 @@ export default function Blogs() {
     <div className="max-w-5xl mx-auto space-y-12">
       <div className="space-y-6">
         <h2
-          className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
+          className="text-3xl sm:text-4xl font-bold flex items-center gap-3"
           id="blogs-heading"
         >
           <span className="text-accent underline decoration-accent/30 underline-offset-8">
@@ -33,7 +33,7 @@ export default function Blogs() {
           <Link
             key={blog.file}
             href={`/blogs/${getSlug(blog)}`}
-            className="flex flex-col p-6 rounded-2xl border border-accent/10 bg-foreground/[0.02] glow-on-hover transition-all group"
+            className="flex flex-col p-6 rounded-2xl border border-accent/10 bg-foreground/[0.02] hover-accent-border transition-all group"
           >
             <time
               dateTime={blog.date}

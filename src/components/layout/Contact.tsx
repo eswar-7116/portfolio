@@ -11,7 +11,7 @@ export default function Contact() {
     <div className="max-w-5xl mx-auto px-4 sm:px-0">
       <div className="space-y-12">
         <h2
-          className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
+          className="text-3xl sm:text-4xl font-bold flex items-center gap-3"
           id="contact-heading"
         >
           <span className="text-accent underline decoration-accent/30 underline-offset-8">

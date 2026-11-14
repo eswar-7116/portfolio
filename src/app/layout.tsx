@@ -4,6 +4,7 @@ import "./globals.css";
 import { SITE_URL } from "@/data/site";
 import NavBar from "@/components/layout/NavBar";
 import printEasterEgg from "@/util/egg";
+import { ACCENT, ACCENT_MUTED } from "@/data/theme";
 import AMAWrapper from "@/components/layout/AMAWrapper";
 import MusicPlayerWrapper from "@/components/layout/MusicPlayerWrapper";
 
@@ -79,7 +80,7 @@ export default function RootLayout({
       >
         <script
           dangerouslySetInnerHTML={{
-            __html: `(${printEasterEgg.toString()})();`,
+            __html: `(${printEasterEgg.toString()})(${JSON.stringify(ACCENT)}, ${JSON.stringify(ACCENT_MUTED)});`,
           }}
         />
         {/* Navbar */}

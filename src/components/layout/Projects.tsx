@@ -10,7 +10,7 @@ export default function Projects() {
         <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-10">
           <div className="space-y-6 flex-1">
             <h2
-                className="text-3xl sm:text-4xl font-mono font-bold flex items-center gap-3"
+                className="text-3xl sm:text-4xl font-bold flex items-center gap-3"
                 id="projects-heading"
             >
                 <span className="text-accent underline decoration-accent/30 underline-offset-8">

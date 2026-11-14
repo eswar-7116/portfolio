@@ -1,3 +1,4 @@
+import { ACCENT, ACCENT_RGB } from "@/data/theme";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -8,7 +9,7 @@ export default function Image() {
   return new ImageResponse(
     <div
       style={{
-        background: "#050505",
+        background: "#0a0b0d",
         width: "100%",
         height: "100%",
         display: "flex",
@@ -25,13 +26,13 @@ export default function Image() {
           left: 0,
           right: 0,
           height: "8px",
-          background: "#00ff88",
+          background: ACCENT,
         }}
       />
 
       <div
         style={{
-          color: "#00ff88",
+          color: ACCENT,
           fontSize: "18px",
           marginBottom: "16px",
           letterSpacing: "0.1em",
@@ -68,13 +69,13 @@ export default function Image() {
             <div
               key={tag}
               style={{
-                border: "1px solid #00ff88",
-                color: "#00ff88",
+                border: `1px solid ${ACCENT}`,
+                color: ACCENT,
                 padding: "8px 20px",
                 borderRadius: "8px",
                 fontSize: "20px",
                 fontFamily: "monospace",
-                background: "rgba(0, 255, 136, 0.05)",
+                background: `rgba(${ACCENT_RGB}, 0.05)`,
               }}
             >
               {tag}

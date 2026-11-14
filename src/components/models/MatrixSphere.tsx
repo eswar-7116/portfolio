@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import { ACCENT, ACCENT_DIM, ACCENT_HEX } from "@/data/theme";
 
 // Programming/math symbols
 const CHARS = [
@@ -23,11 +24,11 @@ const getCharTexture = (char: string, bright: boolean) => {
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       if (isBright) {
-        ctx.shadowColor = "#00ff88";
+        ctx.shadowColor = ACCENT;
         ctx.shadowBlur = 15;
-        ctx.fillStyle = "#00ff88";
+        ctx.fillStyle = ACCENT;
       } else {
-        ctx.fillStyle = "#004422";
+        ctx.fillStyle = ACCENT_DIM;
       }
       ctx.fillText(char, 32, 32);
       const tex = new THREE.CanvasTexture(c);
@@ -124,7 +125,7 @@ export default function MatrixSphere() {
     const core = new THREE.Mesh(
       new THREE.SphereGeometry(1.2, 16, 16),
       new THREE.MeshBasicMaterial({
-        color: 0x00ff88,
+        color: ACCENT_HEX,
         transparent: true,
         opacity: 0.03,
       }),
@@ -134,7 +135,7 @@ export default function MatrixSphere() {
     // Torus rings - reuse geometry
     const ringGeo = new THREE.TorusGeometry(2.5, 0.01, 8, 64);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0x00ff88,
+      color: ACCENT_HEX,
       transparent: true,
       opacity: 0.1,
     });

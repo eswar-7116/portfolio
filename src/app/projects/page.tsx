@@ -19,7 +19,7 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto space-y-16">
         <header className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="space-y-6 flex-1 text-center lg:text-left">
-            <h1 className="text-4xl sm:text-7xl font-mono font-bold tracking-tight">
+            <h1 className="text-4xl sm:text-7xl font-bold tracking-tight">
               My{" "}
               <span className="text-accent underline decoration-accent/30 underline-offset-8">
                 Projects

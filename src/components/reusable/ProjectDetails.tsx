@@ -19,7 +19,7 @@ export default function ProjectDetails({
       <div className="absolute top-[0.6] left-0 right-0 h-1 bg-accent/20 group-hover:bg-accent transition-colors" />
 
       <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl sm:text-2xl font-bold font-mono group-hover:text-accent transition-colors">
+        <h3 className="text-xl sm:text-2xl font-bold group-hover:text-accent transition-colors">
           {project.title}
         </h3>
         <div className="flex gap-3">

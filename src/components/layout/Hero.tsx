@@ -64,7 +64,7 @@ export default function Hero() {
             {/* Name */}
             <h1 className="text-5xl sm:text-8xl font-bold mb-4 tracking-tight animate-fade-in">
               Eswar{" "}
-              <span className="text-accent underline decoration-accent/30 decoration-wavy underline-offset-8">
+              <span className="text-accent underline decoration-accent/30 underline-offset-8">
                 Dudi
               </span>
             </h1>
