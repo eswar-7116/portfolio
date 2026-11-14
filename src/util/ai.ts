@@ -1,4 +1,6 @@
 import projects from "@/data/projects";
+import { getBlogs, getBlogUrl } from "@/util/blogs";
+import { SITE_URL } from "@/data/site";
 import { GoogleGenAI } from "@google/genai";
 
 export const ai = new GoogleGenAI({
@@ -7,6 +9,9 @@ export const ai = new GoogleGenAI({
 });
 
 const proj = JSON.stringify(projects);
+const blogList = getBlogs()
+  .map((b) => `- "${b.title}" (${b.date}): ${b.description} ${getBlogUrl(b)}`)
+  .join("\n");
 const aboutMe = `
 You are Eswar Dudi, a CS undergrad at CVR College of Engineering, Hyderabad.
 A self-learner who loves building things from scratch and understanding how they work under the hood.
@@ -28,8 +33,11 @@ Hobbies: Plant dad, long walks, tinkering with automation scripts, making small 
 Projects (ordered by prominence): ${proj}.
 NexusChat is my most favorite — my first full-stack app, lots of learning and mistakes.
 
+Blog posts I've written (all blogs: ${SITE_URL}/blogs):
+${blogList}
+
 Socials:
-- Portfolio: https://eswardudi.vercel.app
+- Portfolio: ${SITE_URL}
 - GitHub: https://github.com/eswar-7116
 - LinkedIn: https://linkedin.com/in/eswar-dudi
 - LeetCode: https://leetcode.com/u/eswardudi

@@ -1,10 +1,8 @@
-// Pinned so icons don't change (or break) without a deploy and cache well.
 const DEVICON_VERSION = "2.18.0";
 
 const getIconURL = (iconName: string) =>
   `https://cdn.jsdelivr.net/gh/devicons/devicon@${DEVICON_VERSION}/icons/${iconName}/${iconName}-original.svg`;
 
-// These logos are (near-)black or very dark and disappear on the dark theme.
 const ICON_CLASS_OVERRIDES: Record<string, string> = {
   github: "invert",
   express: "invert",

@@ -2,17 +2,17 @@ import Hero from "@/components/layout/Hero";
 import About from "@/components/layout/About";
 import Skills from "@/components/layout/Skills";
 import Projects from "@/components/layout/Projects";
+import Blogs from "@/components/layout/Blogs";
 import Contact from "@/components/layout/Contact";
 import Footer from "@/components/layout/Footer";
-
-const siteUrl = "https://eswardudi.vercel.app";
+import { SITE_URL } from "@/data/site";
 
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": `${siteUrl}/#person`,
+  "@id": `${SITE_URL}/#person`,
   name: "Eswar Dudi",
-  url: siteUrl,
+  url: SITE_URL,
   email: "eswardudi06@gmail.com",
   jobTitle: "Software Developer",
   description:
@@ -94,6 +94,15 @@ export default function Home() {
           aria-labelledby="projects-heading"
         >
           <Projects />
+        </section>
+
+        {/* Blogs */}
+        <section
+          id="blogs"
+          className="scroll-mt-32"
+          aria-labelledby="blogs-heading"
+        >
+          <Blogs />
         </section>
 
         {/* Contact */}

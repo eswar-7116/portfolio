@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, DM_Sans } from "next/font/google";
 import "./globals.css";
+import { SITE_URL } from "@/data/site";
 import NavBar from "@/components/layout/NavBar";
 import printEasterEgg from "@/util/egg";
 import AMAWrapper from "@/components/layout/AMAWrapper";
@@ -20,7 +21,6 @@ const title = "Eswar Dudi | Software Developer";
 const description =
   "Eswar Dudi is a software developer specializing in full stack development, backend systems, and AI integrations. Explore projects like Guntainer, NexusChat, and SynapseLearn.";
 const myName = "Eswar Dudi";
-const url = "https://eswardudi.vercel.app";
 
 export const metadata: Metadata = {
   title,
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: myName }],
   creator: myName,
-  metadataBase: new URL(url),
+  metadataBase: new URL(SITE_URL),
   openGraph: {
     title,
     description,
     type: "website",
-    url,
+    url: SITE_URL,
     siteName: title,
     locale: "en_US",
   },

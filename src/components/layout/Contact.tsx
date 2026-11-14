@@ -15,7 +15,7 @@ export default function Contact() {
           id="contact-heading"
         >
           <span className="text-accent underline decoration-accent/30 underline-offset-8">
-            04.
+            05.
           </span>{" "}
           Contact
         </h2>
