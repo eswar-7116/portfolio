@@ -1,3 +1,4 @@
+import type { Skill } from "@/types/skill";
 import SkillBox from "../reusable/SkillBox";
 
 export default function SkillGroup({

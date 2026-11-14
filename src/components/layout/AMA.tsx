@@ -8,7 +8,7 @@ import {
   Maximize2,
   Minimize2,
 } from "lucide-react";
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 interface ChatMessage {
@@ -143,10 +143,10 @@ export default function AMA() {
           }));
         }
       }
-    } catch (err: any) {
+    } catch (err) {
       console.error("Error in AMA bot:", err);
       const errorMessage =
-        err.message === "QUOTA_EXCEEDED"
+        err instanceof Error && err.message === "QUOTA_EXCEEDED"
           ? "I'm currently taking a little break to recharge! Please try asking me again later."
           : "Something went wrong. Please try again.";
 
@@ -281,11 +281,10 @@ export default function AMA() {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${
-                    msg.role === "user"
-                      ? "bg-accent text-background font-mono rounded-br-md whitespace-pre-wrap selection:bg-background/20 selection:text-background"
-                      : "bg-foreground/5 text-foreground/80 border border-foreground/5 rounded-bl-md whitespace-pre-wrap"
-                  }`}
+                  className={`max-w-[85%] rounded-2xl px-4 py-3 text-sm ${msg.role === "user"
+                    ? "bg-accent text-background font-mono rounded-br-md whitespace-pre-wrap selection:bg-background/20 selection:text-background"
+                    : "bg-foreground/5 text-foreground/80 border border-foreground/5 rounded-bl-md whitespace-pre-wrap"
+                    }`}
                 >
                   {msg.role === "assistant" ? (
                     <div className="prose prose-invert prose-sm max-w-none prose-p:text-foreground/80 prose-strong:text-accent prose-p:my-1 prose-ul:my-1 prose-li:my-0">
@@ -313,7 +312,8 @@ export default function AMA() {
                               className,
                               children,
                               ...props
-                            }: any) => {
+                            }) => {
+                              void node; // strip react-markdown AST prop
                               const isInline =
                                 !className?.includes("language-");
                               return isInline ? (

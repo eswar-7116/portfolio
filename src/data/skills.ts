@@ -1,3 +1,5 @@
+import type { Skill } from "@/types/skill";
+
 const DEVICON_VERSION = "2.18.0";
 
 const getIconURL = (iconName: string) =>

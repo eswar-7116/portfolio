@@ -50,7 +50,7 @@ export default function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        Explore Eswar's Projects
+        Explore Eswar&apos;s Projects
       </div>
       <div
         style={{

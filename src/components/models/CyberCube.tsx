@@ -75,9 +75,9 @@ export default function CyberCube() {
     window.addEventListener("mousemove", onMouseMove);
 
     let t = 0;
+    let frameId = 0;
     const animate = () => {
-      const id = requestAnimationFrame(animate);
-      (animate as any)._id = id;
+      frameId = requestAnimationFrame(animate);
       t += 0.01;
 
       group.rotation.x += 0.005;
@@ -118,7 +118,7 @@ export default function CyberCube() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      cancelAnimationFrame((animate as any)._id);
+      cancelAnimationFrame(frameId);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();

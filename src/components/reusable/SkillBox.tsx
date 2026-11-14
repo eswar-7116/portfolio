@@ -1,3 +1,4 @@
+import type { Skill } from "@/types/skill";
 import Image from "next/image";
 import React from "react";
 

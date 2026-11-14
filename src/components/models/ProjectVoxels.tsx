@@ -83,9 +83,9 @@ export default function ProjectVoxels() {
     window.addEventListener("mousemove", onMouseMove);
 
     let t = 0;
+    let frameId = 0;
     const animate = () => {
-      const id = requestAnimationFrame(animate);
-      (animate as any)._id = id;
+      frameId = requestAnimationFrame(animate);
       t += 0.01;
 
       // Smoother mouse
@@ -137,7 +137,7 @@ export default function ProjectVoxels() {
     window.addEventListener("resize", handleResize);
 
     return () => {
-      cancelAnimationFrame((animate as any)._id);
+      cancelAnimationFrame(frameId);
       window.removeEventListener("mousemove", onMouseMove);
       window.removeEventListener("resize", handleResize);
       renderer.dispose();

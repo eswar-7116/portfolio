@@ -7,7 +7,7 @@ import {
   LinkedInIcon,
   TwitterXIcon,
 } from "@/components/reusable/icons";
-import { Mail, ExternalLink, MessageCircleQuestion } from "lucide-react";
+import { Mail, MessageCircleQuestion } from "lucide-react";
 import { FloatingParticles } from "@/components/models/lazy";
 
 const taglines = [
