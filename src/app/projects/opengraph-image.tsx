@@ -60,7 +60,7 @@ export default function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        Container runtimes · Real-time systems · AI platforms
+        Container runtimes &middot; Real-time systems &middot; AI platforms
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
         {["Glambdar", "Guntainer", "NexusChat", "SynapseLearn"].map((p) => (

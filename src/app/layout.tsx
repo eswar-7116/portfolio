@@ -17,9 +17,9 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const title = "Eswar Dudi | Software Developer";
+const title = "Eswar Dudi | Software Engineer";
 const description =
-  "Eswar Dudi is a software developer specializing in full stack development, backend systems, and AI integrations. Explore projects like Guntainer, NexusChat, and SynapseLearn.";
+  "Eswar Dudi is a software engineer focused on backend and systems: distributed services, runtimes, and backend-focused full-stack development. Explore projects like Glambdar, StreamGuard and Agent Gopher.";
 const myName = "Eswar Dudi";
 
 export const metadata: Metadata = {
@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "Eswar Dudi Developer",
     "Go Developer",
     "Backend Engineer",
+    "Software Engineer",
+    "Systems Engineer",
+    "Full Stack Developer",
     "AI Integrations",
     "Systems Programming",
   ],

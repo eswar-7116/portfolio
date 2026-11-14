@@ -60,7 +60,7 @@ export default function Image() {
           fontFamily: "sans-serif",
         }}
       >
-        Backend Systems · AI Integrations · Full-Stack
+        Backend &middot; Systems &middot; Full-Stack
       </div>
       <div style={{ display: "flex", gap: "16px" }}>
         {["Go", "Python", "TypeScript", "Java", "Docker", "React"].map(

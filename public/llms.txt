@@ -1,6 +1,6 @@
 # Eswar Dudi Portfolio
 
-> Software Developer and Computer Science student passionate about Backend Systems, AI tools, and scalable Web Applications.
+> Software Engineer and Computer Science student focused on backend and systems: distributed services, runtimes, and backend-focused full-stack development.
 
 ## Core Pages
 - [Home](https://eswardudi.vercel.app/)

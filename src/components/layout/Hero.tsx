@@ -13,7 +13,7 @@ import { FloatingParticles } from "@/components/models/lazy";
 const taglines = [
   "Loves to break & fix interesting software.",
   "Computer Science Student.",
-  "Full Stack Developer.",
+  "Software Engineer.",
   "Systems Enthusiast.",
   "Loves automating boring stuff.",
   "Builds things that scale.",
@@ -85,7 +85,7 @@ export default function Hero() {
 
             {/* One-liner */}
             <p className="text-lg sm:text-xl text-foreground/60 mb-10 max-w-2xl font-body italic animate-fade-in opacity-80">
-              Backend systems · AI integrations · Full-stack development
+              Backend systems &middot; Distributed infrastructure &middot; Full-stack development
             </p>
           </div>
 

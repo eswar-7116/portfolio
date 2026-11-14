@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: Props) {
             </h1>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-foreground/50">
               <time dateTime={blog.date}>{formatDate(blog.date)}</time>
-              <span aria-hidden="true">·</span>
+              <span aria-hidden="true">&middot;</span>
               <span>{getReadingTime(content)} min read</span>
             </div>
             <div className="flex flex-wrap gap-2">

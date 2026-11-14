@@ -19,25 +19,23 @@ export default function About() {
             <p>
               I&apos;m{" "}
               <span className="text-foreground font-semibold">Eswar Dudi</span>,
-              a <span className="text-accent">Full Stack Developer</span> and{" "}
-              <span className="text-accent">Android Developer</span> focused on
-              building robust backend systems and exploring the depths of
-              systems programming. My work ranges from crafting high-performance
-              container runtimes in{" "}
-              <span className="text-accent font-mono">Go</span> to
-              architecting real-time communication platforms.
+              a <span className="text-accent font-semibold">Software Engineer</span> focused on backend and&nbsp;
+              <span className="text-accent font-semibold">systems engineering</span>: <span className="text-accent font-semibold">distributed systems</span>,
+              microservices, cloud-native infrastructure and high-performance
+              services. I work in <span className="text-accent font-mono">Go</span>, <span className="text-accent font-mono">Java</span>,&nbsp;
+              <span className="text-accent font-mono">Python</span> and <span className="text-accent font-mono">TypeScript/JavaScript</span>, and
+              I&apos;ve built a serverless platform with gRPC, Redis and
+              Docker, a container runtime on Linux namespaces, and a lock-free
+              monitoring library for Spring Boot published on Maven Central.
             </p>
             <p>
-              Beyond traditional development, I have a strong interest in modern
-              AI landscapes, including{" "}
-              <span className="text-foreground font-semibold">Basic ML</span>,
-              AI integrations, and{" "}
-              <span className="text-foreground font-semibold">
-                Prompt Engineering
-              </span>
-              . Driven by technical curiosity, I strive to understand the
-              underlying mechanics of the tools I use, whether it&apos;s Linux
-              namespaces or distributed system patterns.
+              I&apos;m also a&nbsp;
+              <span className="text-accent font-semibold">backend-focused Full Stack Developer</span>, building
+              scalable web apps with React, Next.js, Node.js and REST APIs, and
+              shipping <span className="text-accent font-semibold">AI integrations</span> and agentic AI tools
+              like a terminal coding agent with MCP support. I care about how
+              things work underneath, and I benchmark performance and
+              scalability instead of guessing at them.
             </p>
           </div>
 

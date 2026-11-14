@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         <div className="text-foreground/60 text-sm font-mono tracking-wider">
-          © {currentYear} Eswar Dudi · Built with Next.js
+          © {currentYear} Eswar Dudi &middot; Built with Next.js
         </div>
       </div>
     </footer>

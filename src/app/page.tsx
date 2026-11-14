@@ -14,9 +14,9 @@ const personJsonLd = {
   name: "Eswar Dudi",
   url: SITE_URL,
   email: "eswardudi06@gmail.com",
-  jobTitle: "Software Developer",
+  jobTitle: "Software Engineer",
   description:
-    "Software developer specializing in full stack development, backend systems, and AI integrations.",
+    "Software engineer focused on backend and systems: distributed services, runtimes, and backend-focused full-stack development.",
 
   affiliation: {
     "@type": "CollegeOrUniversity",
@@ -27,7 +27,7 @@ const personJsonLd = {
       addressCountry: "IN",
     },
   },
-  
+
   // alumniOf: {
   //   "@type": "CollegeOrUniversity",
   //   name: "CVR College of Engineering",
