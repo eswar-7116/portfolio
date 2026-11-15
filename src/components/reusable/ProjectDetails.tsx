@@ -54,7 +54,7 @@ export default function ProjectDetails({
         {project.skills.map((skill, i) => (
           <span
             key={i}
-            className="px-2.5 py-1 text-[10px] font-mono rounded bg-accent/5 border border-accent/10 text-accent/80 uppercase tracking-wider"
+            className="px-2.5 py-1 text-[10px] font-mono rounded bg-secondary/5 border border-secondary/10 text-secondary/75 uppercase tracking-wider"
           >
             {skill}
           </span>

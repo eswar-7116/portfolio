@@ -91,7 +91,7 @@ export default function Hero() {
 
           {/* Wiggling Emoji - Desktop only or subtle on mobile */}
           <div className="hidden lg:block animate-wiggle select-none">
-            <span className="text-8xl sm:text-9xl filter drop-shadow-[0_0_30px_rgba(0,255,136,0.2)]">
+            <span className="text-8xl sm:text-9xl filter drop-shadow-[0_0_30px_rgba(var(--accent-rgb),0.2)]">
               👋
             </span>
           </div>

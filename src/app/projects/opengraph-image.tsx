@@ -1,4 +1,4 @@
-import { ACCENT } from "@/data/theme";
+import { BACKGROUND, ACCENT } from "@/data/theme";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
@@ -9,7 +9,7 @@ export default function Image() {
   return new ImageResponse(
     <div
       style={{
-        background: "#0a0b0d",
+        background: BACKGROUND,
         width: "100%",
         height: "100%",
         display: "flex",

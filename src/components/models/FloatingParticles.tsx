@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import { ACCENT_HEX, ACCENT_DIM_HEX, ACCENT_RGB } from "@/data/theme";
+import { PARTICLE_HEX, PARTICLE_RGB } from "@/data/theme";
 
 export default function FloatingParticles() {
   const mountRef = useRef<HTMLDivElement>(null);
@@ -40,8 +40,8 @@ export default function FloatingParticles() {
     const sizes = new Float32Array(COUNT);
     const velocities: THREE.Vector3[] = [];
 
-    const greenColor = new THREE.Color(ACCENT_HEX);
-    const secondaryColor = new THREE.Color(ACCENT_DIM_HEX);
+    const greenColor = new THREE.Color(PARTICLE_HEX);
+    const secondaryColor = new THREE.Color(PARTICLE_HEX);
 
     for (let i = 0; i < COUNT; i++) {
       const x = (Math.random() - 0.5) * 15;
@@ -72,16 +72,16 @@ export default function FloatingParticles() {
     const geo = new THREE.BufferGeometry();
     geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     geo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
-    
+
     // Simple dot texture
     const canvas = document.createElement("canvas");
     canvas.width = 32;
     canvas.height = 32;
     const ctx = canvas.getContext("2d")!;
     const grad = ctx.createRadialGradient(16, 16, 0, 16, 16, 16);
-    grad.addColorStop(0, `rgba(${ACCENT_RGB}, 1)`);
-    grad.addColorStop(0.4, `rgba(${ACCENT_RGB}, 0.2)`);
-    grad.addColorStop(1, `rgba(${ACCENT_RGB}, 0)`);
+    grad.addColorStop(0, `rgba(${PARTICLE_RGB}, 1)`);
+    grad.addColorStop(0.4, `rgba(${PARTICLE_RGB}, 0.2)`);
+    grad.addColorStop(1, `rgba(${PARTICLE_RGB}, 0)`);
     ctx.fillStyle = grad;
     ctx.beginPath();
     ctx.arc(16, 16, 16, 0, Math.PI * 2);
@@ -89,14 +89,14 @@ export default function FloatingParticles() {
     const particleTexture = new THREE.CanvasTexture(canvas);
 
     const mat = new THREE.PointsMaterial({
-      size: 0.05,
+      size: 0.11,
       map: particleTexture,
       vertexColors: true,
       transparent: true,
       depthWrite: false,
       blending: THREE.AdditiveBlending,
       sizeAttenuation: true,
-      opacity: 0.5,
+      opacity: 0.55,
     });
 
     const points = new THREE.Points(geo, mat);

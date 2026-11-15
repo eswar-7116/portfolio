@@ -37,7 +37,7 @@ export default function Blogs() {
           >
             <time
               dateTime={blog.date}
-              className="font-mono text-xs text-foreground/50"
+              className="font-mono text-xs text-secondary/80"
             >
               {formatDate(blog.date)}
             </time>
@@ -51,7 +51,7 @@ export default function Blogs() {
               {blog.topics.map((topic) => (
                 <span
                   key={topic}
-                  className="px-2.5 py-0.5 rounded-full text-xs font-mono text-accent bg-accent/10 border border-accent/20"
+                  className="px-2.5 py-0.5 rounded-full text-xs font-mono text-secondary/75 bg-secondary/5 border border-secondary/10"
                 >
                   {topic}
                 </span>

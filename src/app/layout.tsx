@@ -4,7 +4,7 @@ import "./globals.css";
 import { SITE_URL } from "@/data/site";
 import NavBar from "@/components/layout/NavBar";
 import printEasterEgg from "@/util/egg";
-import { ACCENT, ACCENT_MUTED } from "@/data/theme";
+import { ACCENT, ACCENT_MUTED, THEME_CSS_VARS } from "@/data/theme";
 import AMAWrapper from "@/components/layout/AMAWrapper";
 import MusicPlayerWrapper from "@/components/layout/MusicPlayerWrapper";
 
@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
+    <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth" style={THEME_CSS_VARS}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta

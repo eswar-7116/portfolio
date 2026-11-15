@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: Props) {
               {blog.title}
             </h1>
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 font-mono text-sm text-foreground/50">
-              <time dateTime={blog.date}>{formatDate(blog.date)}</time>
+              <time dateTime={blog.date} className="text-secondary/80">{formatDate(blog.date)}</time>
               <span aria-hidden="true">&middot;</span>
               <span>{getReadingTime(content)} min read</span>
             </div>
@@ -102,7 +102,7 @@ export default async function BlogPostPage({ params }: Props) {
               {blog.topics.map((topic) => (
                 <span
                   key={topic}
-                  className="px-3 py-1 rounded-full text-xs font-mono text-accent bg-accent/10 border border-accent/20"
+                  className="px-3 py-1 rounded-full text-xs font-mono text-secondary/75 bg-secondary/5 border border-secondary/10"
                 >
                   {topic}
                 </span>

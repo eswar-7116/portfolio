@@ -16,7 +16,7 @@ export default function printEasterEgg(ACCENT: string, ACCENT_MUTED: string) {
 
   console.log(
     "%c  Most people scroll past. You opened DevTools. Respect 🫡!  ",
-    `background: ${ACCENT}; color: #0a0a0a; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 13px; margin-top: 4px;`,
+    `background: #7a3f12; color: #fff1c9; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 13px; margin-top: 4px;`,
   );
 
   console.log(
@@ -30,6 +30,6 @@ export default function printEasterEgg(ACCENT: string, ACCENT_MUTED: string) {
   // CTA
   console.log(
     "%cLet's build something → eswardudi06@gmail.com  ",
-    `background: #0a0a0a; color: ${ACCENT}; border: 1px solid ${ACCENT}66; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 12px;`,
+    `background: #09090b; color: ${ACCENT}; border: 1px solid ${ACCENT}66; padding: 6px 12px; border-radius: 4px; font-weight: bold; font-family: monospace; font-size: 12px;`,
   );
 }
