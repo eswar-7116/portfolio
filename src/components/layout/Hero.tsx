@@ -84,7 +84,7 @@ export default function Hero() {
             </div>
 
             {/* One-liner */}
-            <p className="text-lg sm:text-xl text-foreground/60 mb-10 max-w-2xl font-body italic animate-fade-in opacity-80">
+            <p className="text-lg sm:text-xl text-foreground/85 mb-10 max-w-2xl font-body italic animate-fade-in">
               Backend systems &middot; Distributed infrastructure &middot; Full-stack development
             </p>
           </div>
@@ -119,7 +119,7 @@ export default function Hero() {
             href="https://github.com/eswar-7116"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
+            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-all group"
           >
             <GitHubIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">eswar-7116</span>
@@ -128,7 +128,7 @@ export default function Hero() {
             href="https://linkedin.com/in/eswar-dudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
+            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-all group"
           >
             <LinkedInIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">eswar-dudi</span>
@@ -137,14 +137,14 @@ export default function Hero() {
             href="https://x.com/EswarDudi"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
+            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-all group"
           >
             <TwitterXIcon className="group-hover:scale-110 transition-transform" />
             <span className="font-mono text-sm">EswarDudi</span>
           </a>
           <a
             href="mailto:eswardudi06@gmail.com"
-            className="flex items-center gap-2 text-foreground/60 hover:text-accent transition-all group"
+            className="flex items-center gap-2 text-foreground/80 hover:text-accent transition-all group"
           >
             <Mail
               size={20}

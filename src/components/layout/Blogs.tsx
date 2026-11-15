@@ -22,9 +22,10 @@ export default function Blogs() {
         </p>
         <Link
           href="/blogs"
-          className="inline-block text-accent text-sm font-mono hover:underline underline-offset-4"
+          className="group/link inline-flex items-center gap-1.5 text-accent text-base font-mono"
         >
-          read_all_blogs()
+            <span className="underline decoration-accent/30 underline-offset-4 group-hover/link:decoration-accent transition-colors">read_all_blogs()</span>
+            <span aria-hidden className="transition-transform group-hover/link:translate-x-1">→</span>
         </Link>
       </div>
 

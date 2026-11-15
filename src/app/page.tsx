@@ -68,7 +68,7 @@ export default function Home() {
       />
       <Hero />
 
-      <div className="px-4 sm:px-20 space-y-32 mb-20">
+      <div className="px-4 sm:px-20 space-y-20 sm:space-y-24 mb-20">
         {/* About */}
         <section
           id="about"

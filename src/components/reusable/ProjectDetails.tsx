@@ -46,7 +46,7 @@ export default function ProjectDetails({
         </div>
       </div>
 
-      <p className="text-foreground/60 mb-6 font-body text-sm sm:text-base leading-relaxed grow">
+      <p className="text-foreground/80 mb-6 font-body text-base leading-relaxed grow">
         {project.description}
       </p>
 
@@ -54,7 +54,7 @@ export default function ProjectDetails({
         {project.skills.map((skill, i) => (
           <span
             key={i}
-            className="px-2.5 py-1 text-[10px] font-mono rounded bg-secondary/5 border border-secondary/10 text-secondary/75 uppercase tracking-wider"
+            className="px-2.5 py-1 text-xs font-mono rounded bg-secondary/5 border border-secondary/15 text-secondary/90 uppercase tracking-wider"
           >
             {skill}
           </span>

@@ -7,7 +7,7 @@ export default function Projects() {
   return (
     <div className="max-w-5xl mx-auto">
       <div className="space-y-12">
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-end gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8">
           <div className="space-y-6 flex-1">
             <h2
                 className="text-3xl sm:text-4xl font-bold flex items-center gap-3"
@@ -18,19 +18,20 @@ export default function Projects() {
                 </span>{" "}
                 Projects
             </h2>
-            <p className="text-foreground/60 max-w-xl font-body">
+            <p className="text-foreground/80 text-base sm:text-lg max-w-xl font-body">
                 A selection of systems-oriented projects, distributed patterns, and 
                 full-stack applications focused on performance and scale.
             </p>
             <Link
                 href="/projects"
-                className="inline-block text-accent text-sm font-mono hover:underline underline-offset-4"
+                className="group/link inline-flex items-center gap-1.5 text-accent text-base font-mono"
             >
-                view_all_projects()
+                <span className="underline decoration-accent/30 underline-offset-4 group-hover/link:decoration-accent transition-colors">view_all_projects()</span>
+                <span aria-hidden className="transition-transform group-hover/link:translate-x-1">→</span>
             </Link>
           </div>
           
-          <div className="w-full lg:w-64 aspect-square relative hidden min-[850px]:block group">
+          <div className="w-64 shrink-0 aspect-square relative hidden min-[850px]:block group">
               <CyberCube />
               <div className="absolute inset-0 bg-accent/5 blur-3xl -z-10 group-hover:bg-accent/10 transition-colors"></div>
           </div>
@@ -45,9 +46,10 @@ export default function Projects() {
         <div className="flex justify-center mt-8">
           <Link
             href="/projects"
-            className="px-6 py-3 rounded-lg border border-accent/20 bg-accent/5 text-accent font-mono text-sm hover:bg-accent/10 transition-colors"
+            className="px-6 py-3 rounded-lg border border-accent/20 bg-accent/5 text-accent font-mono text-sm hover:bg-accent/10 hover:border-accent/50 transition-colors group/btn inline-flex items-center gap-2"
           >
             explore_more_work()
+            <span aria-hidden className="transition-transform group-hover/btn:translate-x-1">→</span>
           </Link>
         </div>
       </div>

@@ -5,7 +5,7 @@ const projects: Project[] = [
     title: "Glambdar",
     skills: ["Go", "Docker", "gVisor", "gRPC", "Bun", "Gin", "SQL", "GORM", "Redis", "Rate Limiting", "Serverless", "EWMA"],
     description:
-      "Developed a distributed FaaS platform in Go with a controller/agent architecture over gRPC, Redis cluster state, smart warm-pool-aware routing, global Redis token-bucket rate limiting, and RBAC for role-based access control. Reduced cold starts from 590 ms to 230 ms using EWMA-based predictive pre-warming (0.99 ms warm, 2,449 req/s); added gVisor sandboxing, S3-compatible storage with multipart streaming.",
+      "Distributed FaaS platform in Go with gRPC controller/agents, Redis state and gVisor sandboxing. EWMA predictive pre-warming cut cold starts from 590 ms to 230 ms; 0.99 ms warm latency at 2,449 req/s.",
     github: "https://github.com/eswar-7116/glambdar",
     link: null,
   },
@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: "Agent Gopher",
     skills: ["Go", "Agentic AI", "MCP", "Bubble Tea", "OpenAI API", "Tavily", "Concurrency", "TUI", "HITL"],
     description:
-      "Built a terminal AI coding agent in Go for any OpenAI-compatible API, running file, shell, web-search and MCP tools behind a diff-preview permission system with subcommand-aware whitelisting. Added sub-agent delegation, plan mode, persistent memory and automatic context compaction. Race-detector clean on Linux, macOS and Windows CI, with ~0.5 µs tool registry setup and ~1.3 ms diffs over 5,000-line files.",
+      "Terminal AI coding agent in Go for any OpenAI-compatible API, with MCP tools, sub-agents, plan mode and diff-preview permissions. Race-clean on 3 OSes; ~1.3 ms diffs over 5,000-line files.",
     github: "https://github.com/eswar-7116/agent-gopher",
     link: null,
   },
@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "StreamGuard",
     skills: ["Java", "Spring Boot", "Concurrency", "Anomaly Detection", "EWMA", "Observability", "JMH", "Maven Central"],
     description:
-      "Published a Spring Boot starter on Maven Central that adds real-time traffic monitoring, anomaly detection, EWMA traffic forecasting and DDoS/brute-force signals to an app as a single dependency. Its lock-free sliding-window aggregator sustains 30.8M events/s with 0% sample loss and answers 5-minute queries in 0.3 µs at 2M events (vs 319 ms for a raw rescan).",
+      "Spring Boot starter on Maven Central for real-time traffic monitoring, anomaly detection and EWMA forecasting. Lock-free aggregator sustains 30.8M events/s with 0% loss; 0.3 µs window queries vs 319 ms rescans.",
     github: "https://github.com/eswar-7116/streamguard",
     link: "https://central.sonatype.com/artifact/io.github.eswar-7116/streamguard-spring-boot-starter",
   },
@@ -37,7 +37,7 @@ const projects: Project[] = [
     title: "GDG on Campus CVR Website",
     skills: ["Next.js", "TypeScript", "Notion API", "Google Calendar API", "TanStack Query", "Tailwind CSS", "SEO"],
     description:
-      "Lead contributor (98 commits) to the official website of GDG on Campus CVR College of Engineering. Migrated it to Next.js, built a blog backed by Notion as a CMS with Markdown rendering and syntax highlighting, synced events from Google Calendar with event state computed from dates, and improved first contentful paint, accessibility, SEO metadata and analytics.",
+      "Contributed to GDG on Campus CVR's website: migrated it to Next.js, built a Notion-backed blog and Google Calendar event sync, and improved FCP, accessibility and SEO.",
     github: "https://github.com/gdgcvr/gdgcvrwebsite",
     link: "https://gdg.cvr.ac.in",
   },
@@ -45,7 +45,7 @@ const projects: Project[] = [
     "title": "VERITAS",
     "skills": ["Next.js", "Python", "GenAI", "Docker", "Deepfake Detection", "Machine Learning", "FastAPI"],
     "description":
-      "Winner of CMR HackFest 3.0 (GenAI Track). Decoupled ML dependencies into a custom Docker base image, reducing app size by 2.8 GB, and migrated the backend to uv. Designed the architecture of a 4-engine deepfake forensics pipeline combining Hugging Face models and noise analysis, implemented with the teammates.",
+      "Winner of CMR HackFest 3.0 (GenAI Track). Designed a 4-engine deepfake forensics pipeline and cut app size by 2.8 GB with a custom Docker base image.",
     "github": "https://github.com/eswar-7116/genai-media-verifier",
     "link": null
   },
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "Guntainer",
     skills: ["Go", "Linux Namespaces", "UID/GID Remapping", "chroot", "Containers"],
     description:
-      "A minimal, unprivileged container runtime in Go that isolates processes with PID, mount, UTS, IPC and user namespaces, maps container root to the invoking host user, and bootstraps itself with a self re-exec model like real runtimes, all without Docker.",
+      "Unprivileged container runtime in Go using PID, mount, UTS, IPC and user namespaces with a self re-exec bootstrap, all without Docker.",
     github: "https://github.com/eswar-7116/guntainer",
     link: null,
   },
@@ -61,7 +61,7 @@ const projects: Project[] = [
     "title": "Flux Interpreter",
     "skills": ["Java", "Compilers", "Lexical Analysis", "Recursive Descent Parsing", "AST Optimization", "Interpreters"],
     "description":
-      "A tree-walking interpreted language in Java with a hand-written lexer, recursive descent parser, AST optimizer (constant folding/propagation and algebraic simplification), and a REPL. On a 10,000-line stress test the optimizer shrinks the AST by 67% (115,982 to 37,996 nodes), with parsing in ~24 ms and execution in ~7 ms.",
+      "Tree-walking language in Java with a hand-written lexer, parser, AST optimizer and REPL. Shrinks a 10,000-line AST by 67%; ~24 ms parse, ~7 ms run.",
     "github": "https://github.com/eswar-7116/flux-interpreter",
     "link": null
   },
@@ -69,7 +69,7 @@ const projects: Project[] = [
     "title": "Wiki Semantic Crawler",
     "skills": ["Python", "Sentence-Transformers", "Weighted A*", "NLP", "BeautifulSoup", "Hugging Face"],
     "description":
-      "An autonomous AI agent that plays the 'Wiki Game' by finding the shortest path between unrelated Wikipedia topics. It implements a Weighted A* search algorithm using cosine similarity of all-MiniLM-L6-v2 embeddings as a heuristic to navigate high-dimensional semantic space efficiently.",
+      "AI agent that solves the Wiki Game using Weighted A* search with MiniLM embedding similarity as the heuristic.",
     "github": "https://github.com/eswar-7116/wiki-semantic-crawler",
     "link": null
   },
